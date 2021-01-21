@@ -12,9 +12,96 @@
 </head>
 
 <body>
-    <h1>Hey Nick</h1>
-    <h2>This is my first branch called jun  and nick</h2>
-    <p>This is test from mianwei</p>
+<!-- INFO PAGE BEGINS HERE -->
+    <!-- LEFT COLUMN BEGINS HERE-->
+    <div class="container2" id="info">
+        <div class="item-5">
+            <p><a href="#">Info</a></p>
+            <p><a href="#">Presenting Artists</a></p>
+            <p><a href="#">Acknowledgements</a></p>
+            <p><a href="#">Press Release</a></p>
+        </div>
+        <!-- RIGHT COLUMN BEGINS HERE-->
+        <!-- INFO SECTION BEGINS HERE-->
+        <div class="item-6"> 
+            <p class="space-after">YALE PAINTING THESIS SHOW<br>MFA 2021</p>
+            <p class="space-after">School of Art<br>1156 Chapel Street,<br>New Haven, CT</p>
+            <p class="space-after underline"><a href="#">Schedule an appointment</a> for visiting the physical space.</p>
+        </div>    
+        <!-- PRESENTING ARTISTS BEGINS HERE-->
+        <div class="item-7">
+            <p>February 1st – 7th<br>Group 1 Exhibition</p>
+        </div>
+        <div class="item-8">
+            <p>Vamba Bility</p>
+            <p>Brianna Rose Brooks</p>
+            <p>David Craig</p>
+            <p>Danielle De Jesus</p>
+            <p>Nathaniel Donnett</p>
+            <p>Leyla Faye</p>
+            <p>Kate Meissner</p>
+            <p>Mich Miller</p>
+        </div>
+        <div class="item-7">
+            <p>February 16th – 22th<br>Group 2 Exhibition</p>
+        </div>
+        <div class="item-8">
+            <p>Gabriel Mills</p>
+            <p>Dala Nasser</p>
+            <p>Alina Perez</p>
+            <p>Tamen Pérez</p>
+            <p>Sara Rahmanian</p>
+            <p>Jonathan Rajewski</p>
+            <p>Emma Safir</p>
+            <p>Chibuike Uzoma</p>
+            <p>Curtis Welteroth</p>
+        </div>
+            <!-- ACKNOWLEDGEMENTS BEGINS HERE-->
+            <div class="item-6">
+                <p>Acknowledgements goes here...</p>
+            </div>
+            <!-- PRESS RELEASE BEGINS HERE-->
+            <div class="item-6">
+                <p>Press Release goes here...</p>
+            </div>
+        </div>
+
+<!-- HOMEPAGE BEGINS HERE -->
+    <div class="container" id="homepage">
+        <div class="item-1"><a href="#info">Info</a></div>
+        <div class="item-2"><a href="#">Artists</a></div>
+        <div class="item-4">In Praise of Shadows<br>Yale Painting 2021</div>
+        <div class="item-3" id="demo"></div>
+    </div>
+
+<!-- COUNTDOWN TIMER -->
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Mar 1, 2021").getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+        
+          // Get today's date and time
+          var now = new Date().getTime();
+            
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+            
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          
+          // Output the result in an element with id="demo"
+          document.getElementById("demo").innerHTML ="Online exhibition opens in " + days + " days";
+            
+          // If the count down is over, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "Schedule an appointment";
+          }
+        }, 1000);
+    </script>
+
 </body>
 
 </html>
