@@ -116,6 +116,13 @@ VimVids.prototype = {
     } else {
       this.currentVidIdx = 0;
     }
+
+    var videoId = this.playlist[this.currentVidIdx]
+
+    if (videoId.length === 0) {
+      return
+    }
+
     this.loadVid(this.playlist[this.currentVidIdx])
 
     activatePainterName(this.currentVidIdx);
