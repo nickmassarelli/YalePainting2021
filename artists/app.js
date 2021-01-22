@@ -120,6 +120,7 @@ VimVids.prototype = {
     var videoId = this.playlist[this.currentVidIdx]
 
     if (videoId.length === 0) {
+      this.next()
       return
     }
 
