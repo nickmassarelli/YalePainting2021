@@ -123,7 +123,7 @@ VimVids.prototype = {
       return
     }
 
-    this.loadVid(this.playlist[this.currentVidIdx])
+    this.loadVid(videoId)
 
     activatePainterName(this.currentVidIdx);
   },
