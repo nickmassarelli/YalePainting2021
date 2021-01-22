@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Neuzeit Shadow';
+    src: url('./assets/NeuzeitShadow-100.woff') format('woff')
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+
+/* Nav back to homepage */
+
+nav {
+    font-size: 1em;
+    display: table;
+    opacity: 1;
+    padding: 5px 15px;
+}
+
+#arrow {
+    opacity: 1;
+    transition: opacity .2s;
+}
+
+a {
+    opacity: 0;
+    color: black;
+    text-decoration: none;
+    transition: opacity .2s;
+    margin-left: -1em;
+}
+
+nav:hover a {
+    opacity: 1;
+}
+
+nav:hover #arrow {
+    opacity: 0;
+}
+
+
+/* The active styling for the current painter's video. */
+
+li.active {
+    padding-left: 2.5em;
+    opacity: 1;
+}
+
+li:hover:not(.active) {
+    cursor: pointer;
+    padding-left: .5em;
+}
+
+li.no-media:hover {
+    cursor: text;
+    padding-left: 0;
+    opacity: .5;
+}
+
+ul {
+    width: fit-content;
+    list-style-type: none;
+    padding-left: 20px;
+    padding-top: 20px;
+    min-width: 275px;
+    /* background-color: greenyellow; */
+}
+
+li {
+    transition: padding-left .2s;
+    opacity: .5;
+}
+
+main {
+    margin: 0 auto 0 auto;
+    display: flex;
+    max-width: 1200px;
+    /* border: 1px solid blue; */
+}
+
+div#js-player {
+    padding-left: 2%;
+    height: min-content;
+}
+
+iframe.horizontal {
+    width: 100%;
+    background: transparent;
+    margin-top: -60px;
+    min-width: 900px;
+    margin-left: 0;
+}
+
+
+/* iframe.vertical */
+
+iframe {
+    min-height: 680px;
+    height: 100%;
+    margin-top: 26px;
+    margin-left: 100px;
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1365px) {
+    main {
+        /* border-color: red; */
+        width: 100vw;
+    }
+    div#js-player {
+        position: relative;
+        right: 0;
+    }
+    iframe.horizontal {
+        margin-top: -115px;
+        min-width: 700px;
+    }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1024px) {
+    main {
+        /* border-color: greenyellow; */
+        width: 100vw;
+    }
+    iframe.horizontal {
+        margin-top: -140px;
+        min-width: 600px;
+    }
+    iframe {
+        margin-left: -10%;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 950px) {
+    main {
+        border-color: white;
+    }
+    iframe.horizontal {
+        margin-top: -170px;
+        min-width: 500px;
+        transform: translateX(0);
+    }
+    iframe {
+        transform: translateX(-25%);
+    }
+}
+
+@media only screen and (max-width:799px) {
+    main {
+        max-width: 100vw;
+        /* border-color: blue; */
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    iframe.horizontal {
+        width: 100%;
+        background: transparent;
+        margin-top: 0px;
+        /* min-width: 375px; */
+        min-height: 212px;
+    }
+    /* iframe.vertical */
+    iframe {
+        min-height: 680px;
+        margin: 0;
+        padding: 0;
+    }
+}
