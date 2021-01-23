@@ -9,12 +9,22 @@
 
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="assets/favicon.png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
+<!-- HOMEPAGE BEGINS HERE -->
+    <div class="container" id="homepage">
+        <div class="item-1"><a href="#information-section">Info</a></div>
+        <div class="item-2"><a href="#">Artists</a></div>
+        <div class="item-4">In Praise of Shadows<br>Yale Painting 2021</div>
+        <div class="item-3" id="demo"></div>
+    </div>
+
 <!-- INFO PAGE BEGINS HERE -->
     <!-- LEFT COLUMN BEGINS HERE-->
-    <div class="container2" id="info">
+    <div class="container2" id="information-section">
         <div class="item-5">
             <p><a href="#">Info</a></p>
             <p><a href="#">Presenting Artists</a></p>
@@ -56,23 +66,15 @@
             <p>Chibuike Uzoma</p>
             <p>Curtis Welteroth</p>
         </div>
-            <!-- ACKNOWLEDGEMENTS BEGINS HERE-->
-            <div class="item-6">
-                <p>Acknowledgements goes here...</p>
-            </div>
-            <!-- PRESS RELEASE BEGINS HERE-->
-            <div class="item-6">
-                <p>Press Release goes here...</p>
-            </div>
+        <!-- ACKNOWLEDGEMENTS BEGINS HERE-->
+        <div class="item-6">
+            <p>Acknowledgements goes here...</p>
         </div>
-
-<!-- HOMEPAGE BEGINS HERE -->
-    <div class="container" id="homepage">
-        <div class="item-1"><a href="#info">Info</a></div>
-        <div class="item-2"><a href="#">Artists</a></div>
-        <div class="item-4">In Praise of Shadows<br>Yale Painting 2021</div>
-        <div class="item-3" id="demo"></div>
-    </div>
+        <!-- PRESS RELEASE BEGINS HERE-->
+        <div class="item-6">
+            <p>Press Release goes here...</p>
+        </div>
+    </div>         
 
 <!-- COUNTDOWN TIMER -->
     <script>
@@ -100,6 +102,12 @@
             document.getElementById("demo").innerHTML = "Schedule an appointment";
           }
         }, 1000);
+
+// This is the jquery from mike
+        $('button').click(function() {
+	        $('body').toggleClass('is-info-active')
+        })
+
     </script>
 
 </body>
