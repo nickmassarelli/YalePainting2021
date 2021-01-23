@@ -6,8 +6,8 @@
 }
 
 @font-face {
-    font-family: 'Neuzeit Shadow';
-    src: url('NeuzeitShadow-100.woff') format('woff')
+  font-family: 'Neuzeit Shadow';
+  src: url('NeuzeitShadowWeb-100.woff') format('woff');
 }
 
 body {
