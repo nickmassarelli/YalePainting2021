@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* max-width: 100%; */
+}
+
+@font-face {
+    font-family: 'Neuzeit Shadow';
+    src: url('./assets/NeuzeitShadow-100.woff') format('woff')
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    /* letter-spacing: -.03em; */
+    /* text-transform: lowercase; */
+        /* filter: blur(.5px) */
+}
+
+body {
+    font-family:  Helvetica, sans-serif;
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#homepage {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .7s;
+    position: fixed;
+}
+
+#information-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateY(-100%);
+    transition: .7s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+body.is-info-active #information-section {
+    transform: translateY(0);
+}
+
+body.is-info-active #homepage {
+    transform: translateY(100%);
+}
+
+#video-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    /* min-height: fit-content; */
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+    overflow: scroll;
+    transform: translateX(100%);
+    transition: .7s;
+    background-color: #fff;
+}
+body.is-vd-active #video-section {
+    transform: translateX(0);
+}
+body.is-vd-active #homepage {
+    transform: translateX(-100%);
+}
+
+#landing {
+    display: block;
+    font-size: 3em;
+}
+
+#demo {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+}
+.space-before {
+    padding-top: 100px;
+}
+
+button {
+    min-width: 1.5em;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1em;
+    /* text-align: center; */
+}
+
+button#left {
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    z-index: 2;
+}
+
+button#right {
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    z-index: 4;
+}
+
+ul.subnav {
+    position: fixed;
+    left: 5vw;
+    top: 5vw;
+}
+
+li {
+    list-style-type: none;
+}
+
+div.info-wrapper {
+    text-align: center;
+    max-width: 540px;
+    height: 100%;
+    overflow: scroll;
+    box-sizing: content-box;
+}
+
+.info-wrapper::-webkit-scrollbar {display: none;} /*Chrome Safari and Opera */
+.info-wrapper { -ms-overflow-style: none; /* IE and Edge */ scrollbar-width: none;/* Firefox */}
+main::-webkit-scrollbar {display: none;} /*Chrome Safari and Opera */
+main { -ms-overflow-style: none; /* IE and Edge */ scrollbar-width: none;/* Firefox */}
+
+
+div#presenting-artists {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    column-gap: 2em;
+    row-gap: 1em;
+    box-sizing: content-box;
+}
+
+div.grid-item {
+    text-align: left;
+}

@@ -2,114 +2,157 @@
 <html>
 
 <head>
-	<meta charset='UTF-8'>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yale Painting 2021</title>
-
-    <link rel="stylesheet" href="main.css">
+    <title>Yale Painting 2021 Thesis</title>
+    <link rel="stylesheet" href="./assets/master.css">
+    <link rel="stylesheet" href="./assets/app.css">
     <link rel="icon" href="assets/favicon.png">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://player.vimeo.com/api/player.js'></script>
+
+
 </head>
 
 <body>
-<!-- HOMEPAGE BEGINS HERE -->
-    <div class="container" id="homepage">
-        <div class="item-1"><a href="#information-section">Info</a></div>
-        <div class="item-2"><a href="#">Artists</a></div>
-        <div class="item-4">In Praise of Shadows<br>Yale Painting 2021</div>
-        <div class="item-3" id="demo"></div>
+    <button id="left" onclick="infoToHome()">Info</button>
+    <button id="right" onclick="vdToHome()">Artists</button>
+
+    <div id="homepage">
+        <div id="landing">In Praise of Shadows<br>Yale Painting 2021</div>
+        <!--js counter innerHTML-->
+        <div id="demo"></div>
     </div>
 
-<!-- INFO PAGE BEGINS HERE -->
-    <!-- LEFT COLUMN BEGINS HERE-->
-    <div class="container2" id="information-section">
-        <div class="item-5">
-            <p><a href="#">Info</a></p>
-            <p><a href="#">Presenting Artists</a></p>
-            <p><a href="#">Acknowledgements</a></p>
-            <p><a href="#">Press Release</a></p>
-        </div>
+    <div id="information-section">
+        <ul class="subnav">
+            <li><a href="#info">Info</a></li>
+            <li>   <a href="#presenting-artists">Presenting Artists</a></li>
+            <li>Acknowledgements</li>
+            <li>Press Release</li>
+        </ul>
         <!-- RIGHT COLUMN BEGINS HERE-->
         <!-- INFO SECTION BEGINS HERE-->
-        <div class="item-6"> 
-            <p class="space-after">YALE PAINTING THESIS SHOW<br>MFA 2021</p>
-            <p class="space-after">School of Art<br>1156 Chapel Street,<br>New Haven, CT</p>
-            <p class="space-after underline"><a href="#">Schedule an appointment</a> for visiting the physical space.</p>
-        </div>    
-        <!-- PRESENTING ARTISTS BEGINS HERE-->
-        <div class="item-7">
-            <p>February 1st – 7th<br>Group 1 Exhibition</p>
+        <div class="info-wrapper">
+            <div style="padding-top: 27vh;"></div>
+            <div id="info">
+            <p class="space-before">YALE PAINTING THESIS SHOW<br>MFA 2021</p>
+            <p class="space-before">School of Art<br>1156 Chapel Street,<br>New Haven, CT</p>
+            <p class="space-before"><a href="#" style="text-decoration: underline;">Schedule an appointment</a> for visiting the physical space.
+            </p>
         </div>
-        <div class="item-8">
-            <p>Vamba Bility</p>
-            <p>Brianna Rose Brooks</p>
-            <p>David Craig</p>
-            <p>Danielle De Jesus</p>
-            <p>Nathaniel Donnett</p>
-            <p>Leyla Faye</p>
-            <p>Kate Meissner</p>
-            <p>Mich Miller</p>
-        </div>
-        <div class="item-7">
-            <p>February 16th – 22th<br>Group 2 Exhibition</p>
-        </div>
-        <div class="item-8">
-            <p>Gabriel Mills</p>
-            <p>Dala Nasser</p>
-            <p>Alina Perez</p>
-            <p>Tamen Pérez</p>
-            <p>Sara Rahmanian</p>
-            <p>Jonathan Rajewski</p>
-            <p>Emma Safir</p>
-            <p>Chibuike Uzoma</p>
-            <p>Curtis Welteroth</p>
-        </div>
-        <!-- ACKNOWLEDGEMENTS BEGINS HERE-->
-        <div class="item-6">
-            <p>Acknowledgements goes here...</p>
-        </div>
-        <!-- PRESS RELEASE BEGINS HERE-->
-        <div class="item-6">
-            <p>Press Release goes here...</p>
-        </div>
-    </div>         
 
-<!-- COUNTDOWN TIMER -->
+            <!-- PRESENTING ARTISTS BEGINS HERE-->
+            <div id="presenting-artists" class="space-before">
+                <div class="grid-item">
+                    <p>February 1st – 7th<br>Group 1 Exhibition</p>
+                </div>
+                <div class="grid-item">
+                    <p>Vamba Bility</p>
+                    <p>Brianna Rose Brooks</p>
+                    <p>David Craig</p>
+                    <p>Danielle De Jesus</p>
+                    <p>Nathaniel Donnett</p>
+                    <p>Leyla Faye</p>
+                    <p>Kate Meissner</p>
+                    <p>Mich Miller</p>
+                </div>
+                <div class="grid-item">
+                    <p>February 16th – 22th<br>Group 2 Exhibition</p>
+                </div>
+                <div class="grid-item">
+                    <p>Gabriel Mills</p>
+                    <p>Dala Nasser</p>
+                    <p>Alina Perez</p>
+                    <p>Tamen Pérez</p>
+                    <p>Sara Rahmanian</p>
+                    <p>Jonathan Rajewski</p>
+                    <p>Emma Safir</p>
+                    <p>Chibuike Uzoma</p>
+                    <p>Curtis Welteroth</p>
+                </div>
+            </div>
+            <!-- ACKNOWLEDGEMENTS BEGINS HERE-->
+            <div class="space-before">
+                <p>Acknowledgements goes here...</p>
+            </div>
+            <!-- PRESS RELEASE BEGINS HERE-->
+            <div style="padding-bottom: 25vh;" class="space-before">
+                <p>Press Release goes here...</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="video-section">
+        <!-- <nav>
+          <span id="arrow">&#8592</span>
+          <a href="">In Praise of Shadows</a>
+        </nav> -->
+        <main>
+            <ul id='painters'></ul>
+            <div id='js-player'></div>
+        </main>
+    </div>
+
+
+    <!-- COUNTDOWN TIMER -->
     <script>
         // Set the date we're counting down to
         var countDownDate = new Date("Mar 1, 2021").getTime();
-        
         // Update the count down every 1 second
-        var x = setInterval(function() {
-        
-          // Get today's date and time
-          var now = new Date().getTime();
-            
-          // Find the distance between now and the count down date
-          var distance = countDownDate - now;
-            
-          // Time calculations for days, hours, minutes and seconds
-          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          
-          // Output the result in an element with id="demo"
-          document.getElementById("demo").innerHTML ="Online exhibition opens in " + days + " days";
-            
-          // If the count down is over, write some text 
-          if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("demo").innerHTML = "Schedule an appointment";
-          }
+        var x = setInterval(function () {
+            // Get today's date and time
+            var now = new Date().getTime();
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = "Online exhibition opens in " + days + " days";
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "Schedule an appointment";
+            }
         }, 1000);
 
-// This is the jquery from mike
-        $('button').click(function() {
-	        $('body').toggleClass('is-info-active')
+        // This is the jquery from mike
+        $('button#left').click(function () {
+            $('body').toggleClass('is-info-active')
         })
+        $('button#right').click(function () {
+            $('body').toggleClass('is-vd-active')
+        })
+
+
+        var x = document.getElementById('left')
+        var y = document.getElementById('right')
+
+        function infoToHome() {
+            if (x.innerHTML === 'Info') {
+                x.innerHTML = '&#8595;'
+                y.innerHTML = ''
+            } else {
+                x.innerHTML = 'Info'
+                y.innerHTML = 'Artists'
+            }
+        }
+
+        function vdToHome() {
+            if (y.innerHTML === 'Artists') {
+                y.innerHTML = '	&#8592;';
+            } else {
+                y.innerHTML = 'Artists';
+            }
+        }
 
     </script>
 
+
+    <script src="./assets/app.js"></script>
 </body>
+
 
 </html>
