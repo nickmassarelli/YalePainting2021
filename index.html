@@ -118,37 +118,6 @@
                 document.getElementById("demo").innerHTML = "Schedule an appointment";
             }
         }, 1000);
-
-        // This is the jquery from mike
-        $('button#left').click(function () {
-            $('body').toggleClass('is-info-active')
-        })
-        $('button#right').click(function () {
-            $('body').toggleClass('is-vd-active')
-        })
-
-
-        var x = document.getElementById('left')
-        var y = document.getElementById('right')
-
-        function infoToHome() {
-            if (x.innerHTML === 'Info') {
-                x.innerHTML = '&#8595;'
-                y.innerHTML = ''
-            } else {
-                x.innerHTML = 'Info'
-                y.innerHTML = 'Artists'
-            }
-        }
-
-        function vdToHome() {
-            if (y.innerHTML === 'Artists') {
-                y.innerHTML = '	&#8592;';
-            } else {
-                y.innerHTML = 'Artists';
-            }
-        }
-
     </script>
 
 
