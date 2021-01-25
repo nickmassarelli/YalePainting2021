@@ -10,8 +10,8 @@ function log(str) {
 // The list of painters and their videos.
 const painterVideoDict = {
   'Vamba Bility': '503219177',
+  'Brianna Rose Brooks': '',
   'David Craig': '503306710',
-  'Bri Brooks': '',
   'Danielle De Jesus': '503314093',
   'Nathaniel Donnett': '503307474',
   'Leyla Faye': '503307928',
