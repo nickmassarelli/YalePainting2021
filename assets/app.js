@@ -151,7 +151,6 @@ VimVids.options = {
 }
 
 var vimeo = new VimVids('js-player')
-vimeo.init()
 
 var buttonLeft = $('button#left')
 var buttonRight = $('button#right')
