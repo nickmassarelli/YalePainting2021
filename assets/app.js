@@ -179,7 +179,7 @@ function vdToHome() {
   $('body').toggleClass('is-vd-active')
 
   if (buttonRight.html() === 'Artists') {
-    buttonLeft.html('	&#8592;')
+    buttonRight.html('	&#8592;')
 
     // going to artists screen from home so we need to play the first video
     activatePainterName(0)
