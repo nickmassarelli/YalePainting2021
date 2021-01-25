@@ -146,7 +146,7 @@ VimVids.options = {
   muted: false,
   controls: false,
   fullScreenToggle: false,
-  autoplay: true,
+  autoplay: false,
   playlist: videoIds
 }
 
