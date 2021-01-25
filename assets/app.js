@@ -146,12 +146,51 @@ VimVids.options = {
   muted: false,
   controls: false,
   fullScreenToggle: false,
-  autoplay: true,
+  autoplay: false,
   playlist: videoIds
 }
 
-let player = new VimVids('js-player')
-player.init()
+var vimeo = new VimVids('js-player')
+
+var buttonLeft = $('button#left')
+var buttonRight = $('button#right')
+
+buttonLeft.click(function () {
+  infoToHome()
+})
+
+buttonRight.click(function () {
+  vdToHome()
+})
+
+function infoToHome() {
+  $('body').toggleClass('is-info-active')
+
+  if (buttonLeft.html() === 'Info') {
+    buttonLeft.html('&#8595;')
+    buttonRight.html('')
+  } else {
+    buttonLeft.html('Info')
+    buttonRight.html('Artists')
+  }
+}
+
+function vdToHome() {
+  $('body').toggleClass('is-vd-active')
+
+  if (buttonRight.html() === 'Artists') {
+    buttonRight.html('	&#8592;')
+
+    // going to artists screen from home so we need to play the first video
+    activatePainterName(0)
+    vimeo.playAtIndex(0)
+  } else {
+    buttonRight.html('Artists')
+
+    // pause vimeo player when going back to Home
+    vimeo.player.pause()
+  }
+}
 
 $('.painter').on('click', function() {
   let index = $(this).index();
@@ -160,7 +199,7 @@ $('.painter').on('click', function() {
   }
 
   activatePainterName(index)
-  player.playAtIndex(index)
+  vimeo.playAtIndex(index)
 })
 
 
