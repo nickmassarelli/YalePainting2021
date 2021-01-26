@@ -74,7 +74,7 @@ function VimVids(el, options) {
   //this.playlist = Object.assign({}, VimVids.options.playlist, options.playlist);
 
   this.currentVidIdx = 0
-  this.vidCount = this.playlist.length,
+  this.vidCount = this.playlist.length
 
   this.player = new Vimeo.Player(el, {
     id: this.playlist[this.currentVidIdx],
@@ -87,25 +87,19 @@ function VimVids(el, options) {
 }
 
 VimVids.prototype = {
-  constructor : VimVids,
+  constructor: VimVids,
 
   init() {
-    // this.player.setVolume(0);
-    this.player['play']()
-    this.onEnd()
-   },
+    // add ended event inside init
+    this.player.on('ended', () => {
+      log("Video ended...")
+      this.next()
+    })
+  },
 
   loadVid(id) {
     this.player.loadVideo(id)
-    this.player['play']()
-  },
-
-  onEnd() {
-    log("Video ended...")
-
-    this.player.on('ended', () =>  {
-      this.next()
-    });
+    this.player.play()
   },
 
   next() {
@@ -146,11 +140,12 @@ VimVids.options = {
   muted: false,
   controls: false,
   fullScreenToggle: false,
-  autoplay: false,
+  autoplay: true,
   playlist: videoIds
 }
 
 var vimeo = new VimVids('js-player')
+vimeo.init()
 
 var buttonLeft = $('button#left')
 var buttonRight = $('button#right')
@@ -182,8 +177,8 @@ function vdToHome() {
     buttonRight.html('	&#8592;')
 
     // going to artists screen from home so we need to play the first video
-    activatePainterName(0)
-    vimeo.playAtIndex(0)
+    activatePainterName(vimeo.currentVidIdx)
+    vimeo.playAtIndex(vimeo.currentVidIdx)
   } else {
     buttonRight.html('Artists')
 
