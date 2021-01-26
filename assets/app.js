@@ -74,7 +74,7 @@ function VimVids(el, options) {
   //this.playlist = Object.assign({}, VimVids.options.playlist, options.playlist);
 
   this.currentVidIdx = 0
-  this.vidCount = this.playlist.length,
+  this.vidCount = this.playlist.length
 
   this.player = new Vimeo.Player(el, {
     id: this.playlist[this.currentVidIdx],
