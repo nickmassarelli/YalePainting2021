@@ -321,7 +321,7 @@ iframe {
     iframe {
         max-width: 375px;
         height: 666.7px;
-        margin: -85px 0 -100px 0;
+        margin: -40px 0 -20px 0;
         padding: 0;
         overflow: hidden;
     }
@@ -329,7 +329,7 @@ iframe {
     iframe.horizontal {
         min-width: 375px;
         padding: 0;
-        margin: -320px 0 ;
+        margin: -270px 0 ;
     }
     #js-player {
         width: 375px;
