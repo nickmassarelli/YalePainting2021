@@ -309,6 +309,9 @@ iframe {
     
     /* Video page */
     main {
+        top: 2.1em;
+        position: absolute;
+        /* background-color: blue; */
         width: 100%;
         display: flex;
         flex-direction: column-reverse;
@@ -338,9 +341,6 @@ iframe {
 
     ul#painters {
         position: relative;
-        top: 40px;
-        left: 40px;
-        min-width: 360px;
         padding-bottom: 3em;
     }
 }
