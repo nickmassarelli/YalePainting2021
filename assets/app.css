@@ -288,4 +288,28 @@ iframe {
         margin: -8px;
         padding: 0;
     }
+    ul#infonav {
+        display: none;
+    }
+    div.info, div.presenting-artists, div.press-release, div.acknowledgement  {
+        margin: 0 25px 0 25px;
+        padding-bottom: 50px;
+    }
+    div.grid-item {
+        padding-bottom: 25px;
+    }
+    div.space-below-extra {
+        padding-bottom: 50px;
+    }
+    section div.presenting-artists {
+        display: block;
+    }
+    div#counter {
+        bottom: 20px;
+        width: 70%;
+    }
+    button#right {
+        top: 20px;
+        right: 15px;
+    }
 }
