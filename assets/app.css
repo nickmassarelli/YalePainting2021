@@ -57,7 +57,7 @@ button#right {
     cursor: pointer;
     position: fixed;
     top: 0;
-    right: 0;
+    right: 15px;
     padding: 20px;
     z-index: 4;
 }
@@ -186,9 +186,9 @@ main {
     justify-content: center;
     align-items: center;
     max-width: 1200px;
-    overflow: scroll;
+    overflow: auto;
     /* border: skyblue 2px solid; */
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 ul#painters {
@@ -277,6 +277,9 @@ iframe {
 @media only screen and (max-width:799px) {
     ul#infonav {
         display: none;
+    }
+    .landing {
+      display: none;
     }
     div.info, div.presenting-artists, div.press-release, div.acknowledgement  {
         margin: 0 25px 0 25px;

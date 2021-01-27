@@ -198,6 +198,7 @@ $('.painter').on('click', function () {
 })
 
 const mainVideo = document.querySelector('video.landing');
+const bodyObj = document.getElementsByTagName("body")[0];
 
 // window.addEventListener('load', () => mainVideo.play())
 mainVideo.addEventListener('click', () => mainVideo.style.opacity = '0')
@@ -209,4 +210,5 @@ mainVideo.onplay = function() {
 };
 mainVideo.addEventListener('transitionend', function() {
   mainVideo.remove();
+  bodyObj.style.overflow = 'auto';
 })
