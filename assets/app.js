@@ -10,8 +10,8 @@ function log(str) {
 // The list of painters and their videos.
 const painterVideoDict = {
   'Vamba Bility': '503219177',
+  'Brianna Rose Brooks': '',
   'David Craig': '503306710',
-  'Bri Brooks': '',
   'Danielle De Jesus': '503314093',
   'Nathaniel Donnett': '503307474',
   'Leyla Faye': '503307928',
@@ -74,7 +74,7 @@ function VimVids(el, options) {
   //this.playlist = Object.assign({}, VimVids.options.playlist, options.playlist);
 
   this.currentVidIdx = 0
-  this.vidCount = this.playlist.length,
+  this.vidCount = this.playlist.length
 
   this.player = new Vimeo.Player(el, {
     id: this.playlist[this.currentVidIdx],
@@ -87,25 +87,19 @@ function VimVids(el, options) {
 }
 
 VimVids.prototype = {
-  constructor : VimVids,
+  constructor: VimVids,
 
   init() {
-    // this.player.setVolume(0);
-    this.player['play']()
-    this.onEnd()
-   },
+    // add ended event inside init
+    this.player.on('ended', () => {
+      log("Video ended...")
+      this.next()
+    })
+  },
 
   loadVid(id) {
     this.player.loadVideo(id)
-    this.player['play']()
-  },
-
-  onEnd() {
-    log("Video ended...")
-
-    this.player.on('ended', () =>  {
-      this.next()
-    });
+    this.player.play()
   },
 
   next() {
@@ -150,8 +144,48 @@ VimVids.options = {
   playlist: videoIds
 }
 
-let player = new VimVids('js-player')
-player.init()
+var vimeo = new VimVids('js-player')
+vimeo.init()
+
+var buttonLeft = $('button#left')
+var buttonRight = $('button#right')
+
+buttonLeft.click(function () {
+  infoToHome()
+})
+
+buttonRight.click(function () {
+  vdToHome()
+})
+
+function infoToHome() {
+  $('body').toggleClass('is-info-active')
+
+  if (buttonLeft.html() === 'Info') {
+    buttonLeft.html('&#8595;')
+    buttonRight.html('')
+  } else {
+    buttonLeft.html('Info')
+    buttonRight.html('Artists')
+  }
+}
+
+function vdToHome() {
+  $('body').toggleClass('is-vd-active')
+
+  if (buttonRight.html() === 'Artists') {
+    buttonRight.html('	&#8592;')
+
+    // going to artists screen from home so we need to play the first video
+    activatePainterName(vimeo.currentVidIdx)
+    vimeo.playAtIndex(vimeo.currentVidIdx)
+  } else {
+    buttonRight.html('Artists')
+
+    // pause vimeo player when going back to Home
+    vimeo.player.pause()
+  }
+}
 
 $('.painter').on('click', function() {
   let index = $(this).index();
@@ -160,7 +194,7 @@ $('.painter').on('click', function() {
   }
 
   activatePainterName(index)
-  player.playAtIndex(index)
+  vimeo.playAtIndex(index)
 })
 
 

@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
     /* max-width: 100%; */
 }
 
@@ -100,8 +101,21 @@ body.is-vd-active #homepage {
     position: absolute;
     bottom: 10px;
 }
+
 .space-before {
     padding-top: 100px;
+}
+
+.space-before-half {
+    padding-top: 50px;
+}
+
+.left {
+    text-align: left;
+}
+
+.indent {
+    text-indent: 50px;
 }
 
 button {
@@ -155,7 +169,7 @@ main::-webkit-scrollbar {display: none;} /*Chrome Safari and Opera */
 main { -ms-overflow-style: none; /* IE and Edge */ scrollbar-width: none;/* Firefox */}
 
 
-div#presenting-artists {
+div#presenting-artists-grid {
     display: grid;
     grid-template-columns: 48% 48%;
     column-gap: 2em;
@@ -165,4 +179,13 @@ div#presenting-artists {
 
 div.grid-item {
     text-align: left;
+}
+
+.ital {
+    display: inline-block;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
 }
