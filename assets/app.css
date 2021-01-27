@@ -5,23 +5,19 @@
 }
 
 @font-face {
-  font-family: 'NS100';
-  src: url('NeuzeitShadow-100.woff') format('woff');
+    font-family: 'NS100';
+    src: url('NeuzeitShadow-100.woff') format('woff');
 }
-
 body {
-<<<<<<< Updated upstream
     font-family: 'NS100', Helvetica, sans-serif;
-    /* font-size: 25px;
-    line-height: 1.4; */
-=======
-    font-family: 'Neuzeit Shadow', Helvetica, sans-serif;
     font-size: 24px;
     line-height: 1.25;
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
     overflow: scroll;
->>>>>>> Stashed changes
+}
+::selection {
+    background-color: black;
 }
 
 a {
@@ -36,11 +32,11 @@ a {
 
 .ital {
     display: inline-block;
-    -webkit-transform: skewX(-20deg);
-    -moz-transform: skewX(-20deg);
-    -ms-transform: skewX(-20deg);
-    -o-transform: skewX(-20deg);
-    transform: skewX(-20deg);
+    -webkit-transform: skewX(-13deg);
+    -moz-transform: skewX(-13deg);
+    -ms-transform: skewX(-13deg);
+    -o-transform: skewX(-13deg);
+    transform: skewX(-13deg);
 }
 
 p.caption {
@@ -56,20 +52,20 @@ button#right {
     outline: none;
     background-color: transparent;
     font-size: 1em;
-    font-family: 'Neuzeit Shadow', Helvetica, sans-serif;
+    font-family: 'NS100', Helvetica, sans-serif;
 
     cursor: pointer;
     position: fixed;
     top: 0;
     right: 0;
-    margin: 10px;
+    padding: 20px;
     z-index: 4;
 }
 
 header {
     top: 0;
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     text-align: center;
     display: flex;
     align-items: center;
@@ -78,23 +74,14 @@ header {
 }
 
 div#counter {
-    position: absolute;
-    bottom: 30px;
+    position: relative;
     width: 100%;
     text-align: center;
     font-size: 1em;
+    padding-bottom: 100px;
 }
 
 
-ul#painters {
-    position: fixed;
-    top: 40px;
-    left: 40px;
-    width: fit-content;
-    list-style-type: none;
-    min-width: 360px;
-    text-align: left;
-}
 
 ul#infonav {
     width: fit-content;
@@ -107,14 +94,15 @@ ul#infonav {
 }
 
 section#homepage {
-    /* margin-top: 100px; */
     width: 100%;
+    height: 100vh;
+    overflow: scroll;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
-    transition: .7s;
+    transition: .7s ease-in-out;
 
 }
 
@@ -124,9 +112,10 @@ section#videopage {
     left: 0;
     width: 100vw;
     height: 100vh;
+    overflow: scroll;
+
     transform: translateX(200%);
-    transition: .7s;
-    background-color: gray;
+    transition: .7s ease-in-out;
 }
 
 section div.presenting-artists {
@@ -145,26 +134,20 @@ video.landing {
     left: 0;
     opacity: 1;
     z-index: 5;
-    transition: opacity 1.5s;
+    transition: opacity 1s;
 }
 
 div.info,
 div.presenting-artists,
 div.acknowledgement,
 div.press-release {
-    margin: 0 100px 0 100px;
-    max-width: 600px;
+    margin: 0 150px 0 150px;
+    max-width: 680px;
     min-width: 30%;
     padding-bottom: 200px;
 }
 
 
-/* body.is-info-active #infopage {
-    transform: translateY(0);
-}
-body.is-info-active #homepage {
-    transform: translateY(-100%);
-} */
 body.is-vd-active #videopage {
     transform: translateX(0);
 }
@@ -175,14 +158,13 @@ body.is-vd-active #homepage {
 
 
 /* The active styling for the current painter's video. */
-
 li.active {
     padding-left: 1em;
     opacity: 1;
 }
 li:hover:not(.active) {
     cursor: pointer;
-    padding-left: .5em;
+    padding-left: 1em;
 }
 li.no-media:hover {
     cursor: text;
@@ -200,99 +182,160 @@ main {
     margin: 0 auto 0 auto;
     padding-top: 2em;
     display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 1200px;
+    overflow: scroll;
+    /* border: skyblue 2px solid; */
     overflow: scroll;
 }
 
-div#js-player {
-    padding-left: 2%;
-    height: min-content;
+ul#painters {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    width: fit-content;
+    list-style-type: none;
+    min-width: 360px;
+    text-align: left;
 }
 
 iframe.horizontal {
     width: 100%;
-    background: transparent;
-    margin-top: -60px;
-    min-width: 900px;
+    width: 55vw;
     margin-left: 0;
+    max-width: 1200px;
 }
 
-
 /* iframe.vertical */
-
 iframe {
-    min-height: 680px;
+    min-height: 80vh;
     height: 100%;
-    margin-top: 26px;
-    margin-left: 100px;
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1365px) {
     main {
-        /* border-color: red; */
+        /* background-color: red; */
         width: 100vw;
-        max-width: 1025px;
+        height: fit-content;
     }
-    iframe.horizontal {
-        margin-top: -115px;
-        min-width: 700px;
+
+    iframe {
+        position: absolute;
+        right: 0;
+        top: 2em;
+        height: 640px;
+        overflow: hidden;
+        min-height: 500px;
+        margin: 10px 0;
+    }
+    iframe.horizontal{
+        box-sizing: content-box;
+        margin: 0;
+        /* border: skyblue 1px solid; */
+
+        position: absolute;
+        right: 3em;
+        top: 2em;
+        min-width: 640px;
+        width: 100px;
+        overflow: hidden;
+        margin: -100px 0;
     }
 }
 
-@media only screen and (min-width: 950px) and (max-width: 1024px) {
+@media only screen and (min-width: 800px) and (max-width: 1024px) {
     main {
-        /* border-color: greenyellow; */
-        width: 100vw;
-        max-width: 950px;
+        /* background-color: greenyellow; */
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        overflow: hidden;
     }
     iframe.horizontal {
-        margin-top: -140px;
-        min-width: 600px;
+        margin: -210px 0 ;
+        min-width: 720px;
     }
     iframe {
-        margin-left: -10%;
-    }
-}
-
-@media only screen and (min-width: 800px) and (max-width: 950px) {
-    main {
-        /* border-color: white; */
-    }
-    iframe.horizontal {
-        margin-top: -170px;
         min-width: 500px;
-        transform: translateX(0);
+        height: 900px;
+        /* border: salmon 1px solid; */
+        margin: 20px 0 0 0;
+        padding: 0;
+        overflow: hidden;
     }
-    iframe {
-        transform: translateX(-25%);
+    ul#painters {
+        position: relative;
+        padding-bottom: 3em;
     }
 }
 
 @media only screen and (max-width:799px) {
-    html,
-    body {
-        margin: 0;
-        padding: 0;
+    ul#infonav {
+        display: none;
     }
+    div.info, div.presenting-artists, div.press-release, div.acknowledgement  {
+        margin: 0 25px 0 25px;
+        padding-bottom: 50px;
+    }
+    div.grid-item {
+        padding-bottom: 25px;
+    }
+    div.space-below-extra {
+        padding-bottom: 50px;
+    }
+    section div.presenting-artists {
+        display: block;
+    }
+
+    header {
+        min-height: calc(100vh - 60px);
+    }
+    div#counter {
+        width: 70%;
+    }
+    button#right {
+        top: 0px;
+        right: 15px;
+
+    }
+    /* Video page */
     main {
-        max-width: 375px;
+        width: 100%;
+        display: flex;
         flex-direction: column-reverse;
-        align-items: baseline;
+        align-items: center;
         justify-content: center;
         margin: 0 auto;
-        /* padding-top: 2em; */
-        padding: 2em 0 2em 0;
+        overflow: hidden;
     }
+
+    iframe {
+        max-width: 375px;
+        height: 666.7px;
+        margin: -85px 0 -100px 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
     iframe.horizontal {
         min-width: 375px;
-        min-height: 210.9375px;
         padding: 0;
-        margin: -8px;
+        margin: -320px 0 ;
     }
-    /* iframe.vertical */
-    iframe {
-        min-width: 375px;
-        margin: -8px;
-        padding: 0;
+    #js-player {
+        width: 375px;
+        height: fit-content;
+    }
+
+    ul#painters {
+        position: relative;
+        top: 40px;
+        left: 40px;
+        min-width: 360px;
+        padding-bottom: 3em;
     }
 }

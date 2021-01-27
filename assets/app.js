@@ -30,7 +30,7 @@ const painterVideoDict = {
 
 // Building a new array with just the video IDs from the painters.
 const videoIds = $.map(painterVideoDict, function (value, key) { return value });
-const horizontalVideos = ['503306710', '503314093', '503307474', '503307928', '503308625', '503196192', '503311373', '503313466', '503316662', '503315619'];
+const horizontalVideos = ['503306710', '503314093', '503307474', '503307928', '503308625', '503196192', '503311373', '503313466', '503315619'];
 
 // jQuery stuff
 
@@ -147,28 +147,28 @@ VimVids.options = {
 var vimeo = new VimVids('js-player')
 vimeo.init()
 
-var buttonLeft = $('button#left')
+// var buttonLeft = $('button#left')
 var buttonRight = $('button#right')
 
-buttonLeft.click(function () {
-  infoToHome()
-})
+// buttonLeft.click(function () {
+//   infoToHome()
+// })
 
 buttonRight.click(function () {
   vdToHome()
 })
 
-function infoToHome() {
-  $('body').toggleClass('is-info-active')
+// function infoToHome() {
+//   $('body').toggleClass('is-info-active')
 
-  if (buttonLeft.html() === 'Info') {
-    buttonLeft.html('&#8593;')
-    buttonRight.html('')
-  } else {
-    buttonLeft.html('Info')
-    buttonRight.html('Artists')
-  }
-}
+//   if (buttonLeft.html() === 'Info') {
+//     buttonLeft.html('&#8593;')
+//     buttonRight.html('')
+//   } else {
+//     buttonLeft.html('Info')
+//     buttonRight.html('Artists')
+//   }
+// }
 
 function vdToHome() {
   $('body').toggleClass('is-vd-active')
@@ -203,7 +203,7 @@ mainVideo.addEventListener('click', () => mainVideo.style.opacity = '0')
 window.addEventListener('scroll', () => mainVideo.style.opacity = '0')
 setTimeout(() => {
   mainVideo.style.opacity = '0'
-}, 10000);
+}, 6000);
 
 mainVideo.addEventListener('transitionend', () => mainVideo.remove())
 
