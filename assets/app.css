@@ -300,8 +300,13 @@ iframe {
     button#right {
         top: 0px;
         right: 15px;
-
     }
+    p.caption {
+        line-height: 2;
+        margin-top: 3em;
+        margin-bottom: 2em;
+    }
+    
     /* Video page */
     main {
         width: 100%;
