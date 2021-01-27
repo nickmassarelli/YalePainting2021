@@ -199,7 +199,7 @@ $('.painter').on('click', function () {
 
 const mainVideo = document.querySelector('video.landing');
 
-mainVideo.play();
+// window.addEventListener('load', () => mainVideo.play())
 mainVideo.addEventListener('click', () => mainVideo.style.opacity = '0')
 window.addEventListener('scroll', () => mainVideo.style.opacity = '0')
 mainVideo.onplay = function() {
