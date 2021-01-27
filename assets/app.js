@@ -199,9 +199,9 @@ $('.painter').on('click', function () {
 
 const mainVideo = document.querySelector('video.landing');
 
+mainVideo.play();
 mainVideo.addEventListener('click', () => mainVideo.style.opacity = '0')
 window.addEventListener('scroll', () => mainVideo.style.opacity = '0')
-
 mainVideo.onplay = function() {
   setTimeout(() => {
     mainVideo.style.opacity = '0'
