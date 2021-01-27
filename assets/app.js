@@ -199,9 +199,9 @@ $('.painter').on('click', function () {
 
 const mainVideo = document.querySelector('video.landing')
 
-mainVideo.addEventListener('click', () => mainVideo.style.opacity = '0')
+window.addEventListener('click', () => mainVideo.style.opacity = '0')
 window.addEventListener('scroll', () => mainVideo.style.opacity = '0')
-window.addEventListener('load',function (){
+mainVideo.addEventListener('load', function (){
   mainVideo.play();
   mainVideo.addEventListener('transitionend', () => mainVideo.remove())
 })
