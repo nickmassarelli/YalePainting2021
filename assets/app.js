@@ -24,7 +24,7 @@ const painterVideoDict = {
   'Sara Rahmanian': '503313466',
   'Jonathan Rajewski': '503312134',
   'Emma Safir': '503316662',
-  'Chibuike Uzoma': '503315619',
+  'Chibụike Ụzọma': '503315619',
   'Curtis Welteroth': '503170693',
 }
 
@@ -174,7 +174,7 @@ function vdToHome() {
   $('body').toggleClass('is-vd-active')
 
   if (buttonRight.html() === 'Artists') {
-    buttonRight.html('	&#8592;')
+    buttonRight.html('	&times;')
 
     // going to artists screen from home so we need to play the first video
     activatePainterName(vimeo.currentVidIdx)
