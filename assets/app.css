@@ -135,6 +135,7 @@ video.landing {
     opacity: 1;
     z-index: 5;
     transition: opacity 1s;
+    overflow: hidden;
 }
 
 div.info,
@@ -306,7 +307,7 @@ iframe {
         margin-top: 3em;
         margin-bottom: 2em;
     }
-    
+
     /* Video page */
     main {
         top: 2.1em;

@@ -197,13 +197,16 @@ $('.painter').on('click', function () {
   vimeo.playAtIndex(index)
 })
 
-const mainVideo = document.querySelector('video.landing')
+const mainVideo = document.querySelector('video.landing');
 
 mainVideo.addEventListener('click', () => mainVideo.style.opacity = '0')
 window.addEventListener('scroll', () => mainVideo.style.opacity = '0')
+
 mainVideo.onplay = function() {
   setTimeout(() => {
     mainVideo.style.opacity = '0'
   }, 5500);
 };
-mainVideo.addEventListener('transitionstart', () => mainVideo.remove())
+mainVideo.addEventListener('transitionend', function() {
+  mainVideo.remove();
+})
