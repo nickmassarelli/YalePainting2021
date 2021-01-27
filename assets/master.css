@@ -44,20 +44,20 @@ a {
 }
 
 #information-section {
-    position: fixed;
+    background-color: blue;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+    overflow: scroll;
+    /* min-height: fit-content; */
+    /* height: 100vh; */
     margin: 0;
     z-index: 1;
-    overflow: hidden;
-    transform: translateY(-100%);
+    transform: translateY(100%);
     transition: .7s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 body.is-info-active #information-section {
@@ -65,7 +65,7 @@ body.is-info-active #information-section {
 }
 
 body.is-info-active #homepage {
-    transform: translateY(100%);
+    transform: translateY(-100%);
 }
 
 #video-section {
@@ -74,12 +74,9 @@ body.is-info-active #homepage {
     left: 0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
-    /* min-height: fit-content; */
     margin: 0;
     padding: 0;
     z-index: 3;
-    overflow: scroll;
     transform: translateX(100%);
     transition: .7s;
     background-color: #fff;
@@ -147,8 +144,8 @@ button#right {
 
 ul.subnav {
     position: fixed;
-    left: 5vw;
-    top: 5vw;
+    left: 30px;
+    top: 30px;
 }
 
 li {
@@ -156,11 +153,21 @@ li {
 }
 
 div.info-wrapper {
+    /* background-color: red; */
     text-align: center;
-    max-width: 540px;
+    position: relative;
+    top: 0;
+    /* overflow: scroll; */
     height: 100%;
-    overflow: scroll;
-    box-sizing: content-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#presenting-artists, #info, #acknowledgements, #press-release {
+    max-width: 60vw;
 }
 
 .info-wrapper::-webkit-scrollbar {display: none;} /*Chrome Safari and Opera */

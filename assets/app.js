@@ -29,13 +29,13 @@ const painterVideoDict = {
 }
 
 // Building a new array with just the video IDs from the painters.
-const videoIds = $.map(painterVideoDict, function(value, key) { return value });
-const horizontalVideos = ['503306710','503314093','503307474','503307928','503308625','503196192','503311373','503313466','503316662','503315619'];
+const videoIds = $.map(painterVideoDict, function (value, key) { return value });
+const horizontalVideos = ['503306710', '503314093', '503307474', '503307928', '503308625', '503196192', '503311373', '503313466', '503316662', '503315619'];
 
 // jQuery stuff
 
 // For every painter in the list of painters, add a list item to the HTML
-$.each(Object.keys(painterVideoDict), function(idx, painter) {
+$.each(Object.keys(painterVideoDict), function (idx, painter) {
   // Create a new list item with the class `painter`, and the text of
   // the painter's name.
   var li = $('<li/>').addClass('painter').text(painter);
@@ -105,8 +105,8 @@ VimVids.prototype = {
   next() {
     log("Next video...")
     this.currentVidIdx++;
-    if (this.currentVidIdx < this.vidCount){
-      this.currentVidIdx+1;
+    if (this.currentVidIdx < this.vidCount) {
+      this.currentVidIdx + 1;
     } else {
       this.currentVidIdx = 0;
     }
@@ -162,7 +162,7 @@ function infoToHome() {
   $('body').toggleClass('is-info-active')
 
   if (buttonLeft.html() === 'Info') {
-    buttonLeft.html('&#8595;')
+    buttonLeft.html('&#8593;')
     buttonRight.html('')
   } else {
     buttonLeft.html('Info')
@@ -187,7 +187,7 @@ function vdToHome() {
   }
 }
 
-$('.painter').on('click', function() {
+$('.painter').on('click', function () {
   let index = $(this).index();
   if (videoIds[index].length == 0) {
     return;
@@ -197,4 +197,13 @@ $('.painter').on('click', function() {
   vimeo.playAtIndex(index)
 })
 
+const mainVideo = document.querySelector('video.landing')
+
+mainVideo.addEventListener('click', () => mainVideo.style.opacity = '0')
+window.addEventListener('scroll', () => mainVideo.style.opacity = '0')
+setTimeout(() => {
+  mainVideo.style.opacity = '0'
+}, 10000);
+
+mainVideo.addEventListener('transitionend', () => mainVideo.remove())
 
