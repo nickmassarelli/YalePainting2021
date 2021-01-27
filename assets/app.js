@@ -201,12 +201,9 @@ const mainVideo = document.querySelector('video.landing')
 
 mainVideo.addEventListener('click', () => mainVideo.style.opacity = '0')
 window.addEventListener('scroll', () => mainVideo.style.opacity = '0')
-mainVideo.addEventListener('load', function (){
-  mainVideo.play();
-  mainVideo.addEventListener('transitionend', () => mainVideo.remove())
-})
 mainVideo.onplay = function() {
   setTimeout(() => {
     mainVideo.style.opacity = '0'
   }, 5500);
 };
+mainVideo.addEventListener('transitionstart', () => mainVideo.remove())
