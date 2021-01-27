@@ -6,12 +6,12 @@
 }
 
 @font-face {
-  font-family: 'Neuzeit Shadow';
-  src: url('NeuzeitShadowWeb-100.woff') format('woff');
+  font-family: 'NS100';
+  src: url('NeuzeitShadowa-100.woff') format('woff');
 }
 
 body {
-    font-family: 'Neuzeit Shadow', Helvetica, sans-serif;
+    font-family: 'NS100', Helvetica, sans-serif;
     /* font-size: 25px;
     line-height: 1.4; */
 }
