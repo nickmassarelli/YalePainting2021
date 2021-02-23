@@ -20,7 +20,7 @@ var captionArray = [
 
 $( document ).ready(function() {
   scrollPos = $(document).scrollTop();
-  console.log('current scroll position = ' + scrollPos);
+  // console.log('current scroll position = ' + scrollPos);
 
   settingCaption();
 
@@ -41,12 +41,12 @@ $( document ).ready(function() {
     currentCaption = imgTop[currentImg];
     nextCaption = imgTop[nextImg];
 
-    console.log('scrollPos =' + scrollPos);
-    console.log('imgTop array =' + imgTop);
-    console.log('current img =' + currentImg);
-    console.log('current img position =' + currentCaption);
-    console.log('next img =' + nextImg);
-    console.log('next img position =' + nextCaption);
+    // console.log('scrollPos =' + scrollPos);
+    // console.log('imgTop array =' + imgTop);
+    // console.log('current img =' + currentImg);
+    // console.log('current img position =' + currentCaption);
+    // console.log('next img =' + nextImg);
+    // console.log('next img position =' + nextCaption);
 
 
     if(nextCaption <= scrollPos){
@@ -92,7 +92,7 @@ function settingCaption() {
   // detect what the number of image is
         if(imgTop[i] <= scrollPos){
           currentImg = i;
-          console.log('current image = ' + currentImg);
+          // console.log('current image = ' + currentImg);
         };
     };
 
@@ -106,6 +106,6 @@ function settingCaption() {
     // console.log('txtDetect = ' + txtDetect);
     if(txtPos <= txtDetect){
       $('.caption').css('display', 'none');
-      console.log('Txt!');
+    // console.log('Txt!');
     }
 }
