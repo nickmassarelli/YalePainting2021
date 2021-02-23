@@ -19,6 +19,12 @@ var captionArray = [
 ];
 
 $( document ).ready(function() {
+
+  window.sr = ScrollReveal({reset: true, duration: 1000, delay:0, scale: 1, distance: '0px'});
+  sr.reveal('img', { scale: 1 });
+  sr.reveal('.txt', { scale: 1 });
+
+
   scrollPos = $(document).scrollTop();
   // console.log('current scroll position = ' + scrollPos);
 
