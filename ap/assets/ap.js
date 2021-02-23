@@ -41,7 +41,7 @@ $( document ).ready(function() {
     currentCaption = imgTop[currentImg];
     nextCaption = imgTop[nextImg];
 
-    // console.log('scrollPos =' + scrollPos);
+    console.log('scrollPos =' + scrollPos);
     // console.log('imgTop array =' + imgTop);
     // console.log('current img =' + currentImg);
     // console.log('current img position =' + currentCaption);
@@ -50,11 +50,11 @@ $( document ).ready(function() {
 
 
     if(nextCaption <= scrollPos){
-      console.log('Next caption!');
+      // console.log('Next caption!');
       currentImg++;
       $('.caption').html(captionArray[currentImg]);
     } else if(scrollPos < currentCaption){
-      console.log('Previous caption!');
+      // console.log('Previous caption!');
       currentImg--;
       $('.caption').html(captionArray[currentImg]);
     };
