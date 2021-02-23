@@ -42,10 +42,10 @@ $( document ).ready(function() {
     nextCaption = imgTop[nextImg];
 
     console.log('scrollPos =' + scrollPos);
-    // console.log('imgTop array =' + imgTop);
-    // console.log('current img =' + currentImg);
+    console.log('imgTop array =' + imgTop);
+    console.log('current img =' + currentImg);
     // console.log('current img position =' + currentCaption);
-    // console.log('next img =' + nextImg);
+    console.log('next img =' + nextImg);
     // console.log('next img position =' + nextCaption);
 
 
