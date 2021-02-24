@@ -43,6 +43,7 @@ $( document ).ready(function() {
 
   document.addEventListener('scroll', function() {
     scrollPos = $(document).scrollTop();
+    settingCaption();
     nextImg = currentImg + 1;
     currentCaption = imgTop[currentImg];
     nextCaption = imgTop[nextImg];
