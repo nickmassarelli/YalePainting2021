@@ -34,9 +34,9 @@ $( document ).ready(function() {
 
   document.addEventListener('scroll', function() {
     scrollPos = $(document).scrollTop();
-    settingCaption();
     nextImg = currentImg + 1;
     currentCaption = imgTop[currentImg];
+    previousCaption = imgTop[currentImg];
     nextCaption = imgTop[nextImg];
 
     // console.log('scrollPos =' + scrollPos);
@@ -50,18 +50,12 @@ $( document ).ready(function() {
     if(nextCaption <= scrollPos){
       // console.log('Next caption!');
       currentImg++;
-      $('.caption').html(captionArray[currentImg]);
+      // $('.caption').html(captionArray[currentImg]);
     } else if(scrollPos < currentCaption){
       // console.log('Previous caption!');
       currentImg--;
-      $('.caption').html(captionArray[currentImg]);
+      // $('.caption').html(captionArray[currentImg]);
     };
-
-    // check hover
-    if (checkHover == true) {
-      $( ".info" ).css( "display", "none" );
-      $( ".materials" ).css( "display", "inline" );
-    }
 
     // scroll debug
     if (currentImg > captionArray.length) {
@@ -69,14 +63,13 @@ $( document ).ready(function() {
       nextImg = currentImg + 1;
     };
 
-    txtDetect = scrollPos + vh;
-    if(txtPos <= txtDetect){
-      $('.caption').css('display', 'none');
-      // console.log('Txt!');
-    } else {
-      $('.caption').css('display', 'block');
-    }
+    settingCaption();
 
+    // check hover
+    if (checkHover == true) {
+      $( ".info" ).css( "display", "none" );
+      $( ".materials" ).css( "display", "inline" );
+    }
 
   });
 
@@ -120,6 +113,10 @@ function settingCaption() {
     // console.log('txtDetect = ' + txtDetect);
     if(txtPos <= txtDetect){
       $('.caption').css('display', 'none');
-    // console.log('Txt!');
+      // console.log('Txt!');
+    } else {
+      $('.caption').css('display', 'block');
     }
+    // console.log('Txt!');
+
 }
