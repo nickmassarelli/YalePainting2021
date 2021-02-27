@@ -14,8 +14,12 @@ img {
   margin-right: auto;
   max-width: 65%;
   max-height: 90vh;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+}
+
+.img0 {
+  margin-top: 5vh;
 }
 
 .caption {
@@ -28,16 +32,23 @@ img {
 }
 
 .ital {
-  display: inline;
+  display: inline-block;
   transform: skewX(-13deg);
 }
 
-/* .statement {
+.txt {
+  line-height: 1.3em;
+}
+
+.statement {
   margin-left: auto;
   margin-right: auto;
-  max-width: 70%;
-  padding-bottom: 20vh;
-} */
+  margin-top: 10vh;
+  width: calc(65% - 280px);
+  padding-left: 280px;
+  padding-bottom: 10vh;
+  hanging-punctuation: first;
+}
 
 .container {
   margin-left: auto;
@@ -51,6 +62,10 @@ img {
 .name {
   min-width: 250px;
   margin-right: 30px;
+}
+
+.materials {
+  display: none;
 }
 
 a {

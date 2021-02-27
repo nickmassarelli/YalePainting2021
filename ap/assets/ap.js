@@ -7,20 +7,11 @@ var nextImg;
 var currentCaption;
 var nextCaption;
 var imgTop = [];
-var captionArray = [
-  '<span class="ital">in the end the sky is / Maya</span>',
-  '<span class="ital">the space between</span>',
-  '<span class="ital">what you see is not what you get</span>',
-  '4th img',
-  '5th img',
-  '6th img',
-  '7th img',
-  '8th img'
-];
+var checkHover;
 
 $( document ).ready(function() {
 
-  window.sr = ScrollReveal({reset: true, duration: 1000, delay:0, scale: 1, distance: '0px'});
+  window.sr = ScrollReveal({reset: true, duration: 500, delay:0, scale: 1, distance: '0px'});
   sr.reveal('img', { scale: 1 });
   sr.reveal('.txt', { scale: 1 });
 
@@ -48,11 +39,11 @@ $( document ).ready(function() {
     currentCaption = imgTop[currentImg];
     nextCaption = imgTop[nextImg];
 
-    console.log('scrollPos =' + scrollPos);
-    console.log('imgTop array =' + imgTop);
-    console.log('current img =' + currentImg);
+    // console.log('scrollPos =' + scrollPos);
+    // console.log('imgTop array =' + imgTop);
+    // console.log('current img =' + currentImg);
     // console.log('current img position =' + currentCaption);
-    console.log('next img =' + nextImg);
+    // console.log('next img =' + nextImg);
     // console.log('next img position =' + nextCaption);
 
 
@@ -66,6 +57,12 @@ $( document ).ready(function() {
       $('.caption').html(captionArray[currentImg]);
     };
 
+    // check hover
+    if (checkHover == true) {
+      $( ".info" ).css( "display", "none" );
+      $( ".materials" ).css( "display", "inline" );
+    }
+
     // scroll debug
     if (currentImg > captionArray.length) {
       currentImg = captionArray.length;
@@ -75,7 +72,7 @@ $( document ).ready(function() {
     txtDetect = scrollPos + vh;
     if(txtPos <= txtDetect){
       $('.caption').css('display', 'none');
-      console.log('Txt!');
+      // console.log('Txt!');
     } else {
       $('.caption').css('display', 'block');
     }
@@ -83,7 +80,17 @@ $( document ).ready(function() {
 
   });
 
-
+  $("img").hover(
+    function() {
+      $( ".info" ).css( "display", "none" );
+      $( ".materials" ).css( "display", "inline" );
+      checkHover = true;
+    }, function() {
+      $( ".info" ).css( "display", "inline-block" );
+      $( ".materials" ).css( "display", "none" );
+      checkHover = false;
+    }
+  );
 
 
 
