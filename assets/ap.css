@@ -61,7 +61,7 @@ img {
   right: 0px;
   bottom: 0px;
   padding: 20px;
-  max-width: 50%;
+  max-width: 60%;
   text-align: right;
 }
 
@@ -69,7 +69,7 @@ img {
   line-height: 1.3em;
 }
 
-.statement {
+/* .statement {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10vh;
@@ -77,7 +77,7 @@ img {
   padding-left: 280px;
   padding-bottom: 10vh;
   hanging-punctuation: first;
-}
+} */
 
 .container {
   margin-top: 10vh;
@@ -89,7 +89,6 @@ img {
 
 .addCaption {
   display: flex;
-  flex-direction: column;
   max-width: 65%;
   padding-bottom: 10vh;
   flex-direction: row;
@@ -118,38 +117,61 @@ a {
 
 @media only screen and (min-width: 1025px) and (max-width: 1365px) {
   .container {
-    flex-direction: column;
     max-width: 60%;
+  }
+
+  .addCaption {
+    flex-direction: column;
   }
 
   .worktitle {
     margin-bottom: 1em;
   }
+
+  .caption {
+    max-width: 70%;
+  }
+
 }
 
 
 @media only screen and (min-width: 800px) and (max-width: 1024px) {
   .container {
-    flex-direction: column;
     max-width: 75%;
+  }
+
+  .addCaption {
+    flex-direction: column;
   }
 
   .worktitle {
     margin-bottom: 1em;
   }
+
+  .caption {
+    max-width: 80%;
+  }
+
 }
 
 @media only screen and (max-width:799px) {
   img {
     max-width: 90%;
-    }
+  }
+
+  .addCaption {
+    flex-direction: column;
+  }
 
   .container {
     max-width: 90%;
-    flex-direction: column;
   }
 
   .worktitle {
     margin-bottom: 1em;
+  }
+
+  .caption {
+    max-width: 90%;
   }
 }
