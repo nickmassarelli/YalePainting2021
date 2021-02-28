@@ -2,10 +2,39 @@
     font-family: 'Neuzeit Shadow';
     src: url('./NeuzeitShadow-100.woff') format('woff')
 }
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
     font-size: 24px;
     font-family: 'Neuzeit Shadow';
+}
+
+/* nav codes */
+nav {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  z-index: 1;
+  top: -20px;
+  line-height: 1.5;
+  transition: all .5s;
+}
+
+nav.is-shown {
+  position: fixed;
+  top: 0;
+  /* left: 0; */
+}
+
+nav span, nav a {
+  padding: 10px;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .name-top {

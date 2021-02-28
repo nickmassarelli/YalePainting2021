@@ -9,6 +9,7 @@ var nextCaption;
 var imgTop = [];
 var materials;
 var checkHover = false;
+const navTag = document.querySelector('nav')
 
 $( document ).ready(function() {
 
@@ -116,3 +117,21 @@ function textCheck() {
     $('.caption').css('display', 'none');
   };
 }
+
+
+// nav codes
+var position = $(window).scrollTop();
+// should start at 0
+$(window).scroll(function () {
+    var scroll = $(window).scrollTop()
+
+    if (scroll > position) {
+        console.log('scrollDown')
+        navTag.classList.remove('is-shown')
+    }
+    else {
+        console.log('scrollUp')
+        navTag.classList.add('is-shown')
+    }
+    position = scroll
+})
