@@ -1,7 +1,7 @@
 let vh = window.innerHeight;
 var scrollPos;
 var txtPos;
-var txtDetect;
+// var txtDetect;
 var currentImg = 0;
 var previousCaption;
 var nextImg;
@@ -21,6 +21,7 @@ $( document ).ready(function() {
   scrollPos = $(document).scrollTop();
   settingCaption();
   detectingImgNum();
+  textCheck();
 
   // In case of resizing the browser
   window.addEventListener('resize', function() {
@@ -72,7 +73,7 @@ function settingCaption() {
   // making the array of top positions for images
   for (var i = 0; i < captionArray.length; i++){
       var imgNum = '.img' + i;
-      var imgTopValue = $(imgNum).offset().top  - vh/4;
+      var imgTopValue = $(imgNum).offset().top;
       imgTop.push(imgTopValue);
   };
 }
@@ -89,7 +90,7 @@ function detectingImgNum() {
 function updateCaption() {
   nextImg = currentImg + 1;
   previousCaption = imgTop[currentImg] - vh/2;
-  nextCaption = imgTop[nextImg] - vh/4;
+  nextCaption = imgTop[nextImg] - vh/3;
   if(nextCaption <= scrollPos){
       currentImg++;
       $('.caption').html(captionArray[currentImg]);
@@ -101,11 +102,17 @@ function updateCaption() {
 }
 
 function textCheck() {
-  txtPos = $('.txt').offset().top;
-  txtDetect = scrollPos + vh - vh/10;
-  if(txtPos <= txtDetect){
-    $('.caption').css('display', 'none');
-  } else {
+  txtPos = $('.container').offset().top - vh + vh/10;
+  // txtDetect = scrollPos + vh - vh/10;
+  var captionAppear = imgTop[0] - vh/3;
+  var captionDisappear = imgTop[0] - vh/2
+  console.log('scrollPos = ' + scrollPos);
+  console.log('txtPos = ' + txtPos);
+  console.log('captionDisappear = ' + captionDisappear);
+  if(captionAppear <= scrollPos < txtPos) {
     $('.caption').css('display', 'block');
-  }
+  }; 
+  if (txtPos <= scrollPos || scrollPos <= captionDisappear ){
+    $('.caption').css('display', 'none');
+  };
 }
