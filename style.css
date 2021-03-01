@@ -82,11 +82,11 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   height: 50px;
-  z-index: 1;
-  top: -20px;
+  top: -40px;
   line-height: 1.5;
   transition: all .5s ease-in-out;
   z-index: 6;
+  position: fixed;
 }
 
 nav span.infoButton, nav span.artistsButton {
@@ -202,8 +202,8 @@ div.thumbnail {
     width: 300px;
     height: 300px;
     background-image: none;
-    background-repeat: no-repeat; 
-    background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: contain;
     margin: 40px;
 }
 
@@ -233,6 +233,6 @@ body::-webkit-scrollbar {
     display: none;
   }
 body {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
