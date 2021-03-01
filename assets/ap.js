@@ -128,3 +128,47 @@ function textCheck() {
     $('.caption').css('display', 'none');
   };
 }
+
+
+const rightPageTag = document.querySelector('div.right-page')
+const artistTag = document.querySelector('span.artists')
+
+artistTag.addEventListener('click', function () {
+  // mainTag.classList.toggle('open')
+  navTag.classList.toggle('open')
+  rightPageTag.classList.toggle('open')
+  // container.classList.toggle('open')
+})
+
+const ListTag = document.querySelector('ul')
+const thumbnailTag = document.querySelector('div.thumbnail')
+const nameLists = document.querySelectorAll('li')
+const thumbnails = [
+  `url(assets/thumbnails/1.jpg)`,
+  `url(assets/thumbnails/2.jpg)`,
+  `url(assets/thumbnails/3.jpg)`,
+  `url(assets/thumbnails/4.jpg)`,
+  `url(assets/thumbnails/5.jpg)`,
+  `url(assets/thumbnails/6.jpg)`,
+  `url(assets/thumbnails/7.jpg)`,
+  `url(assets/thumbnails/8.jpg)`,
+  `url(assets/thumbnails/9.jpg)`,
+  `url(assets/thumbnails/10.jpg)`,
+  `url(assets/thumbnails/11.jpg)`,
+  `url(assets/thumbnails/12.jpg)`,
+  `url(assets/thumbnails/13.jpg)`,
+  `url(assets/thumbnails/14.jpg)`,
+  `url(assets/thumbnails/15.jpg)`,
+  `url(assets/thumbnails/16.jpg)`,
+  `url(assets/thumbnails/17.jpg)`,
+]
+
+
+nameLists.forEach(function (item, index) {
+  item.addEventListener('mouseover', function () {
+    thumbnailTag.style.backgroundImage = thumbnails[index]
+  })
+  item.addEventListener('mouseout', function () {
+    thumbnailTag.style.backgroundImage = ''
+  })
+})
