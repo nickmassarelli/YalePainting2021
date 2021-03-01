@@ -20,11 +20,12 @@ let settings = {
   // (should be a value between 0 - 1)
   imageOverlapDuration: 1,
   // Change the amount of blur
-  blurAmount: 20
+  blurAmount: 5
 };
 
 
 // select our elements
+let land = document.querySelector('.land');
 let container = document.querySelector('.container');
 let images = document.querySelectorAll('.image');
 const navTag = document.querySelector('nav')
@@ -35,7 +36,7 @@ const rightPageTag = document.querySelector('div.right-page')
 const leftPageTag = document.querySelector('div.left-page')
 const bodyTag = document.querySelector('body')
 
-// set height of contain dynamically using # of 
+// set height of contain dynamically using # of
 // images and our scroll duration setting
 container.style.height = `${images.length * settings.scrollDuration * 100}vh`;
 
@@ -93,6 +94,7 @@ images.forEach((image, index) => {
 
 // nav codes
 let position = $(window).scrollTop();
+navTag.classList.add('is-shown');
 // should start at 0
 $(window).scroll(function () {
   var scroll = $(window).scrollTop()
@@ -110,26 +112,36 @@ $(window).scroll(function () {
 
 artistTag.addEventListener('click', function () {
   // mainTag.classList.toggle('open')
-  navTag.classList.toggle('open')
+  // navTag.classList.toggle('open')
+  land.classList.toggle('open');
+  container.classList.toggle('open');
   rightPageTag.classList.toggle('open')
-  // container.classList.toggle('open')
 })
 
 infoTag.addEventListener('click', function () {
-  leftPageTag.classList.toggle('open')
-  navTag.classList.toggle('left-open')
-  navTag.style.zIndex = '8'
+  land.classList.toggle('open');
+  container.classList.toggle('open');
+  leftPageTag.classList.toggle('open');
+  leftPageTag.style.opacity = "1";
+  setTimeout(function(){ leftPageTag.style.overflow = "scroll";}, 500);
+  // navTag.classList.toggle('left-open')
+  // navTag.style.zIndex = '8'
 })
 
 leftPageTag.addEventListener('click', function () {
-  leftPageTag.classList.remove('open')  
-  navTag.classList.remove('left-open')
+  land.classList.remove('open');
+  container.classList.remove('open');
+  leftPageTag.classList.remove('open')
+  setTimeout(function(){ leftPageTag.style.opacity = "0";}, 500);
+  leftPageTag.style.overflow = "hidden";
+  // navTag.classList.remove('left-open')
 
 })
 
-const ListTag = document.querySelector('ul')
-const thumbnailTag = document.querySelector('div.thumbnail')
-const nameLists = document.querySelectorAll('li')
+const ListTag = document.querySelector('ul');
+const thumbnailTag = document.querySelector('div.thumbnail');
+const nameLists = document.querySelectorAll('li');
+const closing = document.querySelector('div.closing');
 const thumbnails = [
   `url(assets/thumbnails/Kate-Meissner_01.jpg)`,
   `url(assets/thumbnails/Mich-Miller_09.jpg)`,
@@ -183,8 +195,16 @@ nameLists.forEach(function (item, index) {
   })
 })
 
+closing.addEventListener('click', function() {
+  navTag.classList.remove('open');
+  container.classList.remove('open');
+  rightPageTag.classList.remove('open');
+  land.classList.remove('open');
+
+})
 
 
+const groupNameTag = document.querySelector('.groupName');
 const group1Click = document.querySelector('a.group1')
 const group2Click = document.querySelector('a.group2')
 const imgFiles = document.querySelectorAll('img')
@@ -302,21 +322,30 @@ const group1Img = [
 ]
 
 // by default show Group 1
-group2Click.style.opacity = '.2'
-group1Click.style.opacity = '1'
+// group2Click.style.opacity = '.2'
+// group1Click.style.opacity = '1'
 for (i = 0; i < imgFiles.length; i++) {
   imgFiles[i].srcset = group1Img[i].srcset
   descriptions[i].innerHTML = group1Img[i].description
 }
 
-// click group 1 
+console.log("window top = " + document.documentElement.scrollTop);
+
+// click group 1
 group1Click.addEventListener('click', function (i) {
   for (i = 0; i < imgFiles.length; i++) {
     imgFiles[i].srcset = group1Img[i].srcset
     descriptions[i].innerHTML = group1Img[i].description
   }
-  group2Click.style.opacity = '.2'
-  group1Click.style.opacity = '1'
+  group2Click.style.opacity = '.2';
+  group1Click.style.opacity = '1';
+
+  groupNameTag.innerHTML = "Group 1";
+  document.documentElement.scrollTop = 2550;
+  groupNameTag.animate(
+  [{ filter: 'blur(5px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
+  {duration: 500, easing: 'ease-in-out'});
+  navTag.classList.add('is-shown');
 })
 // click group 2
 group2Click.addEventListener('click', function (i) {
@@ -324,13 +353,21 @@ group2Click.addEventListener('click', function (i) {
     imgFiles[i].srcset = group2Img[i].srcset
     descriptions[i].innerHTML = group2Img[i].description
   }
-  group2Click.style.opacity = '1'
-  group1Click.style.opacity = '.2'
+  group2Click.style.opacity = '1';
+  group1Click.style.opacity = '.2';
+
+  groupNameTag.innerHTML = "Group 2";
+  document.documentElement.scrollTop = 2550;
+  groupNameTag.animate(
+  [{ filter: 'blur(5px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
+  {duration: 500, easing: 'ease-in-out'});
+  navTag.classList.add('is-shown');
 })
 
 const progressTag = document.querySelector('#progress-bar')
 // progress bar
 document.addEventListener('scroll', function() {
+  console.log(document.documentElement.scrollTop);
   const pixels = window.pageYOffset
   const pageHeight = bodyTag.getBoundingClientRect().height
   const totalScrollableDistance = pageHeight - window.innerHeight
@@ -339,4 +376,3 @@ document.addEventListener('scroll', function() {
   progressTag.style.height = `${100 * percentage}%`
 })
 }
-
