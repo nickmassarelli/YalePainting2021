@@ -92,7 +92,7 @@ function settingCaption() {
 
 function detectingImgNum() {
   for (var i = 0; i < captionArray.length; i++){
-        if(imgTop[i] <= scrollPos){
+        if(imgTop[i] - vh*0.7 <= scrollPos){
           currentImg = i;
         };
       };
