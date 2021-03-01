@@ -316,5 +316,4 @@ document.addEventListener('scroll', function() {
   const percentage = pixels / totalScrollableDistance
   progressTag.style.height = `${100 * percentage}%`
 })
-
 }
