@@ -9,7 +9,7 @@ var nextCaption;
 var imgTop = [];
 var materials;
 var checkHover = false;
-var beforeScroll;
+var beforeScroll = 0;
 const navTag = document.querySelector('nav')
 
 $( document ).ready(function() {
@@ -21,6 +21,7 @@ $( document ).ready(function() {
 
   //initial caption setting
   scrollPos = $(document).scrollTop();
+  navTag.classList.add('is-shown');
   settingCaption();
   detectingImgNum();
   textCheck();
@@ -29,6 +30,7 @@ $( document ).ready(function() {
   window.addEventListener('resize', function() {
     settingCaption();
     detectingImgNum();
+    navTag.classList.add('is-shown');
   });
 
   //when scrolling
@@ -37,11 +39,9 @@ $( document ).ready(function() {
 
     // nav scroll
     if (scrollPos > beforeScroll) {
-        console.log('scrollDown')
         navTag.classList.remove('is-shown');
     }
     else {
-        console.log('scrollUp')
         navTag.classList.add('is-shown');
     }
     beforeScroll = scrollPos;
