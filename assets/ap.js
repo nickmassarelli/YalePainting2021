@@ -128,3 +128,46 @@ function textCheck() {
     $('.caption').css('display', 'none');
   };
 }
+
+
+const rightPageTag = document.querySelector('div.right-page')
+const artistTag = document.querySelector('span.artists')
+
+artistTag.addEventListener('click', function () {
+  // mainTag.classList.toggle('open')
+  navTag.classList.toggle('open')
+  rightPageTag.classList.toggle('open')
+  // container.classList.toggle('open')
+})
+
+const ListTag = document.querySelector('ul')
+const thumbnailTag = document.querySelector('div.thumbnail')
+const nameLists = document.querySelectorAll('li')
+const thumbnails = [
+  `url(assets/thumbnails/Kate-Meissner_01.jpg)`,
+  `url(assets/thumbnails/Mich-Miller_09.jpg)`,
+  `url(assets/thumbnails/Gabriel-Mills_01.jpg)`,
+  `url(assets/thumbnails/Alina-Perez_01.jpg)`,
+  `url(assets/thumbnails/Tamen-Perez_08.jpg)`,
+  `url(assets/thumbnails/Sara-Rahmanian_08.jpg)`,
+  `url(assets/thumbnails/Emma-Safir_02.jpg)`,
+  `url(assets/thumbnails/Chibụike-Ụzọma_02.jpg)`,
+  `url(assets/thumbnails/Curtis-Welteroth_02.jpg)`,
+  `url(assets/thumbnails/Vamba-Bility_08.jpg)`,
+  `url(assets/thumbnails/Brianna-Rose-Brooks_01.jpg)`,
+  `url(assets/thumbnails/David-Craig_02.jpg)`,
+  `url(assets/thumbnails/Danielle-DeJesus_02.jpg)`,
+  `url(assets/thumbnails/Nathaniel-Donnett_08.jpg)`,
+  `url(assets/thumbnails/Leyla-Faye_01.jpg)`,
+  `url(assets/thumbnails/Dala-Nasser_01.jpg)`,
+  `url(assets/thumbnails/Jonathan-Rajewski_02.jpg)`,
+]
+
+nameLists.forEach(function (item, index) {
+  item.addEventListener('mouseover', function () {
+    thumbnailTag.style.backgroundImage = thumbnails[index]
+  })
+  item.addEventListener('mouseout', function () {
+    thumbnailTag.style.backgroundImage = ''
+  })
+})
