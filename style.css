@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Neuzeit Shadow';
+  src: url('assets/NeuzeitShadow-100.woff') format('woff')
+}
+
+body {
+  font-size: 24px;
+  font-family: 'Neuzeit Shadow';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* overflow: scroll; */
+}
+p.title {
+  z-index: 1;
+  font-size: 4vmin;
+  text-align: center;
+  line-height: 1.3;
+  z-index: 2;
+}
+p.allcap {
+  z-index: 2;
+  font-size: 4vmin;
+  text-align: center;
+  height: 4vmin;
+  letter-spacing: 0.2em;
+}
+
+.container {
+  position: relative;
+}
+.land {
+  width: 100%;
+  height: 100vh;
+  z-index: 4;
+  /* background-color: white; */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  /* border: 1px red solid; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.image > img {
+  width: 75%;
+  height: 75%;
+  max-height: 877px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.description {
+  font-size: 24px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  z-index: 1;
+  top: -20px;
+  line-height: 1.5;
+  transition: all .5s ease-in-out;
+  z-index: 6;
+}
+
+nav span.infoButton, nav span.artistsButton {
+  top: -20px;
+}
+
+/* nav span.groups{
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  top: 0;
+} */
+
+nav.is-shown {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav span, nav a {
+  padding: 10px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+div.container.open {
+  transform: translateX(-60vw);
+}
+
+nav.open, div.right-page.open {
+  transform: translateX(-60vw);
+}
+nav.left-open {
+  transform: translateX(calc(100vw - 2.5em));
+}
+
+div.right-page {
+  width: 60vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  transition: all .5s ease-in-out;
+  z-index: 6;
+  background-color: white;
+}
+div.left-page {
+  /* padding-top: 100px; */
+  cursor: pointer;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  transition: .5s ease-in-out;
+  z-index: 6;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100vw);
+}
+
+div.left-page.open {
+  transform: translateX(0);
+}
+
+div.presenting-artists {
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: left;
+  gap: 2em;
+}
+
+#info-title {
+  text-transform: uppercase;
+  margin-top: 35vh;
+  margin-bottom: 35vh;
+  letter-spacing: 0.2em;
+}
+
+div.info,
+div.presenting-artists,
+div.acknowledgement,
+div.press-release {
+    margin: 0 150px 0 150px;
+    max-width: 680px;
+    min-width: 30%;
+    padding-bottom: 200px;
+}
+#presenting-artists, #press-release, #acknowledgements {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+ul li {
+    list-style-type: none;
+    line-height: 1.3;
+    cursor: pointer;
+}
+ul {
+    width: max-content;
+    padding: 40px;
+}
+div.thumbnail {
+    width: 300px;
+    height: 300px;
+    background-image: none;
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    margin: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  cursor: pointer;
+  /* text-decoration: underline; */
+  text-shadow: 0 0 1px #888888;
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 0;
+  background-color: #414141;
+  z-index: 2;
+  transition: background-color 3s;
+  /* box-shadow: 0 0 2px 1px #414141; */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+body {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
