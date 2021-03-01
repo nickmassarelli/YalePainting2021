@@ -101,8 +101,8 @@ function detectingImgNum() {
 
 function updateCaption() {
   nextImg = currentImg + 1;
-  previousCaption = imgTop[currentImg] - vh/2;
-  nextCaption = imgTop[nextImg] - vh/3;
+  previousCaption = imgTop[currentImg] - vh*0.7;
+  nextCaption = imgTop[nextImg] - vh*0.7;
   if(nextCaption <= scrollPos){
       currentImg++;
       $('.caption').html(captionArray[currentImg]);
@@ -116,7 +116,7 @@ function updateCaption() {
 function textCheck() {
   txtPos = $('.container').offset().top - vh + vh/10;
   // txtDetect = scrollPos + vh - vh/10;
-  var captionAppear = imgTop[0] - vh/3;
+  var captionAppear = imgTop[0] - vh/4;
   var captionDisappear = imgTop[0] - vh/2
   console.log('scrollPos = ' + scrollPos);
   console.log('txtPos = ' + txtPos);
