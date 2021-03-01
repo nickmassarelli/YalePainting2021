@@ -25,10 +25,12 @@ let settings = {
 
 
 // select our elements
+let vh = window.innerHeight;
 let land = document.querySelector('.land');
 let container = document.querySelector('.container');
 let images = document.querySelectorAll('.image');
-const navTag = document.querySelector('nav')
+const navTag = document.querySelector('nav');
+const groupTag = document.querySelector('.groups');
 const artistTag = document.querySelector('span.artistsButton')
 const infoTag = document.querySelector('span.infoButton')
 const mainTag = document.querySelector('main')
@@ -39,6 +41,7 @@ const bodyTag = document.querySelector('body')
 // set height of contain dynamically using # of
 // images and our scroll duration setting
 container.style.height = `${images.length * settings.scrollDuration * 100}vh`;
+var imageHeight = `${settings.scrollDuration}` * vh;
 
 // Use GSAP + GSAP ScrollTrigger plugin to more easily animate the images
 // on scroll
@@ -115,7 +118,9 @@ artistTag.addEventListener('click', function () {
   // navTag.classList.toggle('open')
   land.classList.toggle('open');
   container.classList.toggle('open');
-  rightPageTag.classList.toggle('open')
+  rightPageTag.classList.toggle('open');
+  navTag.classList.toggle('open');
+  groupTag.classList.toggle('open');
 })
 
 infoTag.addEventListener('click', function () {
@@ -135,8 +140,24 @@ leftPageTag.addEventListener('click', function () {
   setTimeout(function(){ leftPageTag.style.opacity = "0";}, 500);
   leftPageTag.style.overflow = "hidden";
   // navTag.classList.remove('left-open')
-
 })
+
+land.addEventListener('click', function () {
+  navTag.classList.remove('open');
+  container.classList.remove('open');
+  rightPageTag.classList.remove('open');
+  land.classList.remove('open');
+  groupTag.classList.remove('open');
+})
+
+container.addEventListener('click', function () {
+  navTag.classList.remove('open');
+  container.classList.remove('open');
+  rightPageTag.classList.remove('open');
+  land.classList.remove('open');
+  groupTag.classList.remove('open');
+})
+
 
 const ListTag = document.querySelector('ul');
 const thumbnailTag = document.querySelector('div.thumbnail');
@@ -200,7 +221,7 @@ closing.addEventListener('click', function() {
   container.classList.remove('open');
   rightPageTag.classList.remove('open');
   land.classList.remove('open');
-
+  groupTag.classList.remove('open');
 })
 
 
@@ -337,13 +358,16 @@ group1Click.addEventListener('click', function (i) {
     imgFiles[i].srcset = group1Img[i].srcset
     descriptions[i].innerHTML = group1Img[i].description
   }
-  group2Click.style.opacity = '.2';
-  group1Click.style.opacity = '1';
+  group2Click.classList.remove('active');
+  group2Click.classList.add('inactive');
+  group1Click.classList.remove('inactive');
+  group1Click.classList.add('active');
 
+  // go to group 1 title
   groupNameTag.innerHTML = "Group 1";
-  document.documentElement.scrollTop = 2550;
+  document.documentElement.scrollTop = imageHeight;
   groupNameTag.animate(
-  [{ filter: 'blur(5px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
+  [{ filter: 'blur(3px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
   {duration: 500, easing: 'ease-in-out'});
   navTag.classList.add('is-shown');
 })
@@ -353,13 +377,16 @@ group2Click.addEventListener('click', function (i) {
     imgFiles[i].srcset = group2Img[i].srcset
     descriptions[i].innerHTML = group2Img[i].description
   }
-  group2Click.style.opacity = '1';
-  group1Click.style.opacity = '.2';
+  group1Click.classList.remove('active');
+  group1Click.classList.add('inactive');
+  group2Click.classList.remove('inactive');
+  group2Click.classList.add('active');
 
+  // go to group 2 title
   groupNameTag.innerHTML = "Group 2";
-  document.documentElement.scrollTop = 2550;
+  document.documentElement.scrollTop = imageHeight;
   groupNameTag.animate(
-  [{ filter: 'blur(5px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
+  [{ filter: 'blur(3px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
   {duration: 500, easing: 'ease-in-out'});
   navTag.classList.add('is-shown');
 })
