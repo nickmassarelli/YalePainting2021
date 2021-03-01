@@ -9,6 +9,7 @@ var nextCaption;
 var imgTop = [];
 var materials;
 var checkHover = false;
+var beforeScroll = 0;
 const navTag = document.querySelector('nav')
 
 $( document ).ready(function() {
@@ -20,6 +21,7 @@ $( document ).ready(function() {
 
   //initial caption setting
   scrollPos = $(document).scrollTop();
+  navTag.classList.add('is-shown');
   settingCaption();
   detectingImgNum();
   textCheck();
@@ -28,11 +30,21 @@ $( document ).ready(function() {
   window.addEventListener('resize', function() {
     settingCaption();
     detectingImgNum();
+    navTag.classList.add('is-shown');
   });
 
   //when scrolling
   document.addEventListener('scroll', function() {
     scrollPos = $(document).scrollTop();
+
+    // nav scroll
+    if (scrollPos > beforeScroll && scrollPos > 0) {
+        navTag.classList.remove('is-shown');
+    }
+    else {
+        navTag.classList.add('is-shown');
+    }
+    beforeScroll = scrollPos;
 
     // scroll debug
     if (currentImg > captionArray.length) {
@@ -65,7 +77,6 @@ $( document ).ready(function() {
   );
 
 
-
 });
 
 
@@ -81,7 +92,7 @@ function settingCaption() {
 
 function detectingImgNum() {
   for (var i = 0; i < captionArray.length; i++){
-        if(imgTop[i] <= scrollPos){
+        if(imgTop[i] - vh*0.7 <= scrollPos){
           currentImg = i;
         };
       };
@@ -90,8 +101,8 @@ function detectingImgNum() {
 
 function updateCaption() {
   nextImg = currentImg + 1;
-  previousCaption = imgTop[currentImg] - vh/2;
-  nextCaption = imgTop[nextImg] - vh/3;
+  previousCaption = imgTop[currentImg] - vh*0.7;
+  nextCaption = imgTop[nextImg] - vh*0.7;
   if(nextCaption <= scrollPos){
       currentImg++;
       $('.caption').html(captionArray[currentImg]);
@@ -105,33 +116,15 @@ function updateCaption() {
 function textCheck() {
   txtPos = $('.container').offset().top - vh + vh/10;
   // txtDetect = scrollPos + vh - vh/10;
-  var captionAppear = imgTop[0] - vh/3;
+  var captionAppear = imgTop[0] - vh/4;
   var captionDisappear = imgTop[0] - vh/2
   console.log('scrollPos = ' + scrollPos);
   console.log('txtPos = ' + txtPos);
   console.log('captionDisappear = ' + captionDisappear);
   if(captionAppear <= scrollPos < txtPos) {
     $('.caption').css('display', 'block');
-  }; 
+  };
   if (txtPos <= scrollPos || scrollPos <= captionDisappear ){
     $('.caption').css('display', 'none');
   };
 }
-
-
-// nav codes
-var position = $(window).scrollTop();
-// should start at 0
-$(window).scroll(function () {
-    var scroll = $(window).scrollTop()
-
-    if (scroll > position) {
-        console.log('scrollDown')
-        navTag.classList.remove('is-shown')
-    }
-    else {
-        console.log('scrollUp')
-        navTag.classList.add('is-shown')
-    }
-    position = scroll
-})
