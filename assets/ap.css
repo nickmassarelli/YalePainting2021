@@ -175,4 +175,8 @@ a {
   .caption {
     max-width: 90%;
   }
+
+  .aN {
+    display: none;
+  }
 }
