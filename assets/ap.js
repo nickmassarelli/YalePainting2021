@@ -38,7 +38,7 @@ $( document ).ready(function() {
     scrollPos = $(document).scrollTop();
 
     // nav scroll
-    if (scrollPos > beforeScroll) {
+    if (scrollPos > beforeScroll && scrollPos > 0) {
         navTag.classList.remove('is-shown');
     }
     else {
