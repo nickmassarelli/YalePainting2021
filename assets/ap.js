@@ -163,11 +163,35 @@ const thumbnails = [
   `url(assets/thumbnails/Jonathan-Rajewski_02.jpg)`,
 ]
 
+const indiPages = [
+  './kate-meissner.html',
+  './mich-miller.html',
+  './gabriel-mills.html',
+  './alina-perez.html',
+  './tamen-perez.html',
+  './sara-rahmanian.html',
+  './emma-safir.html',
+  './chibuike-uzoma.html',
+  './curtis-welteroth.html',
+  './vamba-bility.html',
+  './brianna-rose-brooks.html',
+  './david-craig.html',
+  './danielle-dejesus.html',
+  './nathaniel-donnett.html',
+  './leyla-faye.html',
+  './dala-nasser.html',
+  './jonathan-rajewski.html'
+]
+
+
 nameLists.forEach(function (item, index) {
   item.addEventListener('mouseover', function () {
     thumbnailTag.style.backgroundImage = thumbnails[index]
   })
   item.addEventListener('mouseout', function () {
     thumbnailTag.style.backgroundImage = ''
+  })
+  item.addEventListener('click', function() {
+    location.href = indiPages[index]
   })
 })
