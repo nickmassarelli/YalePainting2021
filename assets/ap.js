@@ -134,10 +134,18 @@ const rightPageTag = document.querySelector('div.right-page')
 const artistTag = document.querySelector('span.artists')
 
 artistTag.addEventListener('click', function () {
-  // mainTag.classList.toggle('open')
-  navTag.classList.toggle('open')
+  // navTag.classList.toggle('open')
   rightPageTag.classList.toggle('open')
-  // container.classList.toggle('open')
+  navTag.style.zIndex = '8'
+})
+
+const leftArea = document.querySelector('#closeList')
+
+leftArea.addEventListener('click', ()=>{
+  if (rightPageTag.classList.contains('open')) {
+  rightPageTag.classList.remove('open')
+  // navTag.classList.remove('open')
+  }
 })
 
 const ListTag = document.querySelector('ul')
@@ -151,7 +159,7 @@ const thumbnails = [
   `url(assets/thumbnails/Tamen-Perez_08.jpg)`,
   `url(assets/thumbnails/Sara-Rahmanian_08.jpg)`,
   `url(assets/thumbnails/Emma-Safir_02.jpg)`,
-  `url(assets/thumbnails/Chibụike-Ụzọma_02.jpg)`,
+  `url(assets/thumbnails/Chibuike-Uzoma_02.jpg)`,
   `url(assets/thumbnails/Curtis-Welteroth_02.jpg)`,
   `url(assets/thumbnails/Vamba-Bility_08.jpg)`,
   `url(assets/thumbnails/Brianna-Rose-Brooks_01.jpg)`,
