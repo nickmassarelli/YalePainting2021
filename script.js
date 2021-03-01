@@ -255,10 +255,10 @@ const group1Img = [
     description: `<a href="#0">1-4. Kate Meissner</a>, <a href="#0">5. Chibuike Uzoma</a>`
   },{
     srcset: './assets/Group1/3.jpg 1.5x',
-    description: `<a href="#0">Kate Meissner</a>, <em>Untitled</em>`
+    description: `<a href="#0">Kate Meissner</a>`
   },{
     srcset: './assets/Group1/4.jpg 1.5x',
-    description: `<a href="#0">Kate Meissner</a>, <em>Untitled</em>`
+    description: `<a href="#0">Kate Meissner</a>`
   },{
     srcset: './assets/Group1/5.jpg 1.5x',
     description: `<a href="#0">1. Gabriel Mills</a>, <a href="#0">2-3. Alina Perez</a>`
@@ -302,8 +302,8 @@ const group1Img = [
 ]
 
 // by default show Group 1
-group2Click.style.opacity = '1'
-group1Click.style.opacity = '.2'
+group2Click.style.opacity = '.2'
+group1Click.style.opacity = '1'
 for (i = 0; i < imgFiles.length; i++) {
   imgFiles[i].srcset = group1Img[i].srcset
   descriptions[i].innerHTML = group1Img[i].description
@@ -315,8 +315,8 @@ group1Click.addEventListener('click', function (i) {
     imgFiles[i].srcset = group1Img[i].srcset
     descriptions[i].innerHTML = group1Img[i].description
   }
-  group2Click.style.opacity = '1'
-  group1Click.style.opacity = '.2'
+  group2Click.style.opacity = '.2'
+  group1Click.style.opacity = '1'
 })
 // click group 2
 group2Click.addEventListener('click', function (i) {
@@ -324,9 +324,8 @@ group2Click.addEventListener('click', function (i) {
     imgFiles[i].srcset = group2Img[i].srcset
     descriptions[i].innerHTML = group2Img[i].description
   }
-  group2Click.style.opacity = '.2'
-  group1Click.style.opacity = '1'
-
+  group2Click.style.opacity = '1'
+  group1Click.style.opacity = '.2'
 })
 
 const progressTag = document.querySelector('#progress-bar')
@@ -340,3 +339,4 @@ document.addEventListener('scroll', function() {
   progressTag.style.height = `${100 * percentage}%`
 })
 }
+
