@@ -135,21 +135,23 @@ const artistTag = document.querySelector('span.artistsButton')
 const closingRight = document.querySelector('div.closing-right');
 const fadingTag = document.querySelector('.fading');
 const navTag = document.querySelector('nav');
-
+const leftArea = document.querySelector('#closeList')
 
 artistTag.addEventListener('click', function () {
   fadingTag.classList.add('open');
   rightPageTag.classList.add('open')
   navTag.style.zIndex = '8'
+
+  leftArea.classList.add('tab-is-shown')
 })
 
-const leftArea = document.querySelector('#closeList')
 
 leftArea.addEventListener('click', ()=>{
   if (rightPageTag.classList.contains('open')) {
   fadingTag.classList.remove('open');
   rightPageTag.classList.remove('open')
   }
+  leftArea.classList.remove('tab-is-shown')
 })
 
 closingRight.addEventListener('click', function() {
