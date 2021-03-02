@@ -37,10 +37,12 @@ const mainTag = document.querySelector('main')
 const rightPageTag = document.querySelector('div.right-page')
 const leftPageTag = document.querySelector('div.left-page')
 const bodyTag = document.querySelector('body')
+const closingLeft = document.querySelector('div.closing-left');
 
 // set height of contain dynamically using # of
 // images and our scroll duration setting
 container.style.height = `${images.length * settings.scrollDuration * 100}vh`;
+var containerHeight = `${images.length * settings.scrollDuration}` * vh;
 var imageHeight = `${settings.scrollDuration}` * vh;
 
 // Use GSAP + GSAP ScrollTrigger plugin to more easily animate the images
@@ -128,12 +130,21 @@ infoTag.addEventListener('click', function () {
   container.classList.toggle('open');
   leftPageTag.classList.toggle('open');
   leftPageTag.style.opacity = "1";
-  setTimeout(function(){ leftPageTag.style.overflow = "scroll";}, 500);
+  setTimeout(function(){ leftPageTag.style.overflow = "scroll";}, 400);
   // navTag.classList.toggle('left-open')
   // navTag.style.zIndex = '8'
 })
 
 leftPageTag.addEventListener('click', function () {
+  land.classList.remove('open');
+  container.classList.remove('open');
+  leftPageTag.classList.remove('open')
+  setTimeout(function(){ leftPageTag.style.opacity = "0";}, 500);
+  leftPageTag.style.overflow = "hidden";
+  // navTag.classList.remove('left-open')
+})
+
+closingLeft.addEventListener('click', function () {
   land.classList.remove('open');
   container.classList.remove('open');
   leftPageTag.classList.remove('open')
@@ -162,7 +173,7 @@ container.addEventListener('click', function () {
 const ListTag = document.querySelector('ul');
 const thumbnailTag = document.querySelector('div.thumbnail');
 const nameLists = document.querySelectorAll('li');
-const closing = document.querySelector('div.closing');
+const closingRight = document.querySelector('div.closing-right');
 const thumbnails = [
   `url(assets/thumbnails/Kate-Meissner_01.jpg)`,
   `url(assets/thumbnails/Mich-Miller_09.jpg)`,
@@ -216,7 +227,7 @@ nameLists.forEach(function (item, index) {
   })
 })
 
-closing.addEventListener('click', function() {
+closingRight.addEventListener('click', function() {
   navTag.classList.remove('open');
   container.classList.remove('open');
   rightPageTag.classList.remove('open');
@@ -266,7 +277,7 @@ const group2Img = [
     description: `<a href="#0">Leyla Faye</a>`
   }, {
     srcset: './assets/Group2/11.jpg 1.5x',
-    description: `<a href="#0">1-2. Leyla Faye</a>, <a href="#0">3. Jonathan Rajewski</a>, <a href="#0">4-5. Vamba Bility</a>`
+    description: `<a href="#0">Leyla Faye</a>, <a href="#0">Jonathan Rajewski</a>, <a href="#0">Vamba Bility</a>`
   }, {
     srcset: './assets/Group2/12.jpg 1.5x',
     description: `<a href="#0">Jonathan Rajewski</a>`
@@ -345,15 +356,50 @@ const group1Img = [
 // by default show Group 1
 // group2Click.style.opacity = '.2'
 // group1Click.style.opacity = '1'
+var checkingGroup = 1;
 for (i = 0; i < imgFiles.length; i++) {
   imgFiles[i].srcset = group1Img[i].srcset
   descriptions[i].innerHTML = group1Img[i].description
 }
 
-console.log("window top = " + document.documentElement.scrollTop);
-
 // click group 1
 group1Click.addEventListener('click', function (i) {
+  updateGroup1(i);
+});
+// click group 2
+group2Click.addEventListener('click', function (i) {
+  updateGroup2(i);
+})
+
+const progressTag = document.querySelector('#progress-bar')
+// progress bar
+document.addEventListener('scroll', function() {
+  const windowScroll = document.documentElement.scrollTop;
+  const pixels = window.pageYOffset;
+  const pageHeight = bodyTag.getBoundingClientRect().height;
+  const totalScrollableDistance = pageHeight - window.innerHeight;
+  const percentage = pixels / totalScrollableDistance
+  progressTag.style.height = `${100 * percentage}%`
+
+  // move to the other group
+  if ( containerHeight - vh <= windowScroll ) {
+    if (checkingGroup == 1){
+    updateGroup2(i);
+    // console.log("checkingGroup = " + checkingGroup);
+  } else if (checkingGroup == 2) {
+    updateGroup1(i);
+    // console.log("checkingGroup = " + checkingGroup);
+  }
+  };
+
+})
+
+// in case of resizing the window
+window.addEventListener('resize', function() {
+  containerHeight = `${images.length * settings.scrollDuration}` * vh;
+})
+
+function updateGroup1(i) {
   for (i = 0; i < imgFiles.length; i++) {
     imgFiles[i].srcset = group1Img[i].srcset
     descriptions[i].innerHTML = group1Img[i].description
@@ -370,9 +416,15 @@ group1Click.addEventListener('click', function (i) {
   [{ filter: 'blur(3px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
   {duration: 500, easing: 'ease-in-out'});
   navTag.classList.add('is-shown');
-})
-// click group 2
-group2Click.addEventListener('click', function (i) {
+
+  //update the containerHeight
+  containerHeight = `${images.length * settings.scrollDuration}` * vh;
+
+  //update status
+  checkingGroup = 1;
+};
+
+function updateGroup2() {
   for (i = 0; i < imgFiles.length; i++) {
     imgFiles[i].srcset = group2Img[i].srcset
     descriptions[i].innerHTML = group2Img[i].description
@@ -389,17 +441,20 @@ group2Click.addEventListener('click', function (i) {
   [{ filter: 'blur(3px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
   {duration: 500, easing: 'ease-in-out'});
   navTag.classList.add('is-shown');
-})
 
-const progressTag = document.querySelector('#progress-bar')
-// progress bar
-document.addEventListener('scroll', function() {
-  console.log(document.documentElement.scrollTop);
-  const pixels = window.pageYOffset
-  const pageHeight = bodyTag.getBoundingClientRect().height
-  const totalScrollableDistance = pageHeight - window.innerHeight
+  //update the containerHeight
+  containerHeight = `${images.length * settings.scrollDuration}` * vh;
 
-  const percentage = pixels / totalScrollableDistance
-  progressTag.style.height = `${100 * percentage}%`
-})
+  //update status
+  checkingGroup = 2;
+};
+
+
+
+
+
+
+
+
+
 }
