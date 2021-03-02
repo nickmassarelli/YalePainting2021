@@ -141,7 +141,7 @@ artistTag.addEventListener('click', function () {
   fadingTag.classList.add('open');
   rightPageTag.classList.add('open')
   navTag.style.zIndex = '8'
-
+  leftArea.style.display = "block";
   leftArea.classList.add('tab-is-shown')
 })
 
@@ -152,12 +152,14 @@ leftArea.addEventListener('click', ()=>{
   rightPageTag.classList.remove('open')
   }
   leftArea.classList.remove('tab-is-shown')
+  leftArea.style.display = "none";
 })
 
 closingRight.addEventListener('click', function() {
   fadingTag.classList.remove('open');
   rightPageTag.classList.remove('open');
   leftArea.classList.remove('tab-is-shown')
+  leftArea.style.display = "none";
 })
 
 
