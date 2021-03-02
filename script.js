@@ -189,7 +189,7 @@ const indiPages = [
   './mich-miller.html',
   './gabriel-mills.html',
   './alina-perez.html',
-  './tamen-perez.html',
+  './tamen-pérez.html',
   './sara-rahmanian.html',
   './emma-safir.html',
   './chibuike-uzoma.html',
