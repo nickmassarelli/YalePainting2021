@@ -129,7 +129,7 @@ infoTag.addEventListener('click', function () {
   land.classList.toggle('open');
   container.classList.toggle('open');
   leftPageTag.classList.toggle('open');
-  leftPageTag.style.opacity = "1";  
+  leftPageTag.style.opacity = "1";
   setTimeout(function(){ leftPageTag.style.overflow = "scroll";}, 400);
 })
 
@@ -184,7 +184,7 @@ const thumbnails = [
   `url(assets/thumbnails/Tamen-Perez_08.jpg)`,
   `url(assets/thumbnails/Sara-Rahmanian_08.jpg)`,
   `url(assets/thumbnails/Emma-Safir_02.jpg)`,
-  `url(assets/thumbnails/Chibụike-Ụzọma_02.jpg)`,
+  `url(assets/thumbnails/Chibuike-Uzoma_02.jpg)`,
   `url(assets/thumbnails/Curtis-Welteroth_02.jpg)`,
   `url(assets/thumbnails/Vamba-Bility_08.jpg)`,
   `url(assets/thumbnails/Brianna-Rose-Brooks_01.jpg)`,
