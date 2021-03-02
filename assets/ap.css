@@ -185,7 +185,7 @@ div.thumbnail {
 
 div.closing-right {
   font-size: 1.5em;
-  position: fixed;
+  position: absolute;
   padding-top: 6px;
   padding-right: 20px;
   right: 0;
