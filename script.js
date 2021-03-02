@@ -18,9 +18,9 @@ let settings = {
   imagePauseDuration: 1,
   // Set how much the fade in/out overlap
   // (should be a value between 0 - 1)
-  imageOverlapDuration: 1,
+  imageOverlapDuration: .8,
   // Change the amount of blur
-  blurAmount: 5
+  blurAmount: 7
 };
 
 
