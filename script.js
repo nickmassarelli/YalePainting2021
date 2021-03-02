@@ -135,7 +135,7 @@ window.onload = async () => {
 
 if (rightPageTag.classList.contains('open')) {
   leftArea.style.cursor = `url('./assets/close.png'), auto`
-} 
+}
 
 
   leftPageTag.addEventListener('click', function () {
