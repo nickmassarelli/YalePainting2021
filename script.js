@@ -295,55 +295,55 @@ if (rightPageTag.classList.contains('open')) {
   const group1Img = [
     {
       srcset: './assets/Group1/1.jpg 1.5x',
-      description: `<a href="#0">Chibuike Uzoma</a>`
+      description: `<a href="./chibuike-uzoma.html">Chibuike Uzoma</a>`
     }, {
       srcset: './assets/Group1/2.jpg 1.5x',
-      description: `<a href="#0">Kate Meissner</a>, <a href="#0">Chibuike Uzoma</a>`
+      description: `<a href="./kate-meissner.html">Kate Meissner</a>, <a href="./chibuike-uzoma.html">Chibuike Uzoma</a>`
     }, {
       srcset: './assets/Group1/3.jpg 1.5x',
-      description: `<a href="#0">Kate Meissner</a>`
+      description: `<a href="./kate-meissner.html">Kate Meissner</a>`
     }, {
       srcset: './assets/Group1/4.jpg 1.5x',
-      description: `<a href="#0">Kate Meissner</a>`
+      description: `<a href="./kate-meissner.html">Kate Meissner</a>`
     }, {
       srcset: './assets/Group1/5.jpg 1.5x',
-      description: `<a href="#0">Gabriel Mills</a>, <a href="#0">Alina Perez</a>`
+      description: `<a href="./gabriel-mills.html">Gabriel Mills</a>, <a href="./alina-perez.html">Alina Perez</a>`
     }, {
       srcset: './assets/Group1/6.jpg 1.5x',
-      description: `<a href="#0">Gabriel Mills</a>, <a href="#0">Alina Perez</a>`
+      description: `<a href="./gabriel-mills.html">Gabriel Mills</a>, <a href="./alina-perez.html">Alina Perez</a>`
     }, {
       srcset: './assets/Group1/7.jpg 1.5x',
-      description: `<a href="#0">Alina Perez</a>`
+      description: `<a href="./alina-perez.html">Alina Perez</a>`
     }, {
       srcset: './assets/Group1/8.jpg 1.5x',
-      description: `<a href="#0">Alina Perez</a>, <a href="#0">Gabriel Mills</a>`
+      description: `<a href="./alina-perez.html">Alina Perez</a>, <a href="./gabriel-mills.html">Gabriel Mills</a>`
     }, {
       srcset: './assets/Group1/13.jpg 1.5x',
-      description: `<a href="#0">Sara Rahmanian</a>`
+      description: `<a href="./sara-rahmanian.html">Sara Rahmanian</a>`
     }, {
       srcset: './assets/Group1/10.jpg 1.5x',
-      description: `<a href="#0">Sara Rahmanian</a>`
+      description: `<a href="./sara-rahmanian.html">Sara Rahmanian</a>`
     }, {
       srcset: './assets/Group1/11.jpg 1.5x',
-      description: `<a href="#0">Sara Rahmanian</a>`
+      description: `<a href="./sara-rahmanian.html">Sara Rahmanian</a>`
     }, {
       srcset: './assets/Group1/12.jpg 1.5x',
-      description: `<a href="#0">Sara Rahmanian</a>`
+      description: `<a href="./sara-rahmanian.html">Sara Rahmanian</a>`
     }, {
       srcset: './assets/Group1/18.jpg 1.5x',
-      description: `<a href="#0">Emma Safir</a>, <a href="#0">Mich Miller</a>`
+      description: `<a href="./emma-safir.html">Emma Safir</a>, <a href="./mich-miller.html">Mich Miller</a>`
     }, {
       srcset: './assets/Group1/15.jpg 1.5x',
-      description: `<a href="#0">Emma Safir</a>`
+      description: `<a href="./emma-safir.html">Emma Safir</a>`
     }, {
       srcset: './assets/Group1/16.jpg 1.5x',
-      description: `<a href="#0">Tamen Perez</a>, <a href="#0">Emma Safir</a>`
+      description: `<a href="./tamen-pérez.html">Tamen Perez</a>, <a href="./emma-safir.html">Emma Safir</a>`
     }, {
       srcset: './assets/Group1/20.jpg 1.5x',
-      description: `<a href="#0">Curtis Welteroth</a>`
+      description: `<a href="./curtis-welteroth.html">Curtis Welteroth</a>`
     }, {
       srcset: './assets/Group1/21.jpg 1.5x',
-      description: `<a href="#0">Curtis Welteroth</a>`
+      description: `<a href="./curtis-welteroth.html">Curtis Welteroth</a>`
     }
   ]
 
