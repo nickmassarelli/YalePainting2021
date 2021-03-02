@@ -132,20 +132,22 @@ function textCheck() {
 
 const rightPageTag = document.querySelector('div.right-page')
 const artistTag = document.querySelector('span.artists')
+const leftArea = document.querySelector('#closeList')
 
 artistTag.addEventListener('click', function () {
   // navTag.classList.toggle('open')
   rightPageTag.classList.toggle('open')
   navTag.style.zIndex = '8'
+
+  leftArea.classList.add('tab-is-shown')
 })
 
-const leftArea = document.querySelector('#closeList')
 
 leftArea.addEventListener('click', ()=>{
   if (rightPageTag.classList.contains('open')) {
   rightPageTag.classList.remove('open')
-  // navTag.classList.remove('open')
   }
+  leftArea.classList.remove('tab-is-shown')
 })
 
 const ListTag = document.querySelector('ul')
