@@ -364,6 +364,8 @@ for (i = 0; i < imgFiles.length; i++) {
   imgFiles[i].srcset = group1Img[i].srcset
   descriptions[i].innerHTML = group1Img[i].description
 }
+var windowHeight = document.body.clientHeight;
+setTimeout(function(){ windowHeight = document.body.clientHeight; }, 5000);
 
 // click group 1
 group1Click.addEventListener('click', function (i) {
@@ -385,7 +387,7 @@ document.addEventListener('scroll', function() {
   // progressTag.style.height = `${100 * percentage}%`
 
   // move to the other group
-  if ( containerHeight - vh <= windowScroll ) {
+  if ( windowHeight - vh <= windowScroll ) {
     if (checkingGroup == 1){
     updateGroup2(i);
     // console.log("checkingGroup = " + checkingGroup);
@@ -416,15 +418,16 @@ function updateGroup1(i) {
 
   // go to group 1 title
   groupNameTag.innerHTML = "Group 1";
-  document.documentElement.scrollTop = imageHeight + vh/4;
+  document.documentElement.scrollTop = imageHeight + vh/2;
   groupNameTag.animate(
   [{ filter: 'blur(3px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
   {duration: 500, easing: 'ease-in-out'});
   navTag.classList.add('is-shown');
 
   //update the containerHeight
-  containerHeight = `${images.length * settings.scrollDuration}` * vh;
-
+  // containerHeight = `${images.length * settings.scrollDuration}` * vh;
+  windowHeight = document.body.clientHeight;
+  setTimeout(function(){windowHeight = document.body.clientHeight;}, 5000);
   //update status
   checkingGroup = 1;
 };
@@ -441,15 +444,16 @@ function updateGroup2() {
 
   // go to group 2 title
   groupNameTag.innerHTML = "Group 2";
-  document.documentElement.scrollTop = imageHeight + vh/4;
+  document.documentElement.scrollTop = imageHeight + vh/2;
   groupNameTag.animate(
   [{ filter: 'blur(3px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
   {duration: 500, easing: 'ease-in-out'});
   navTag.classList.add('is-shown');
 
   //update the containerHeight
-  containerHeight = `${images.length * settings.scrollDuration}` * vh;
-
+  // containerHeight = `${images.length * settings.scrollDuration}` * vh;
+  windowHeight = document.body.clientHeight;
+  setTimeout(function(){windowHeight = document.body.clientHeight;}, 5000);
   //update status
   checkingGroup = 2;
 };
