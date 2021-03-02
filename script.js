@@ -33,11 +33,11 @@ const navTag = document.querySelector('nav');
 const groupTag = document.querySelector('.groups');
 const artistTag = document.querySelector('span.artistsButton')
 const infoTag = document.querySelector('span.infoButton')
-const mainTag = document.querySelector('main')
 const rightPageTag = document.querySelector('div.right-page')
 const leftPageTag = document.querySelector('div.left-page')
 const bodyTag = document.querySelector('body')
-const closingLeft = document.querySelector('div.closing-left');
+const closingLeft = document.querySelector('div.closing-left')
+const leftArea = document.querySelector('#closeList')
 
 // set height of contain dynamically using # of
 // images and our scroll duration setting
@@ -116,24 +116,24 @@ $(window).scroll(function () {
 })
 
 artistTag.addEventListener('click', function () {
-  // mainTag.classList.toggle('open')
-  // navTag.classList.toggle('open')
   land.classList.toggle('open');
   container.classList.toggle('open');
   rightPageTag.classList.toggle('open');
   navTag.classList.toggle('open');
   groupTag.classList.toggle('open');
+
+  leftArea.classList.add('tab-is-shown')
 })
 
 infoTag.addEventListener('click', function () {
   land.classList.toggle('open');
   container.classList.toggle('open');
   leftPageTag.classList.toggle('open');
-  leftPageTag.style.opacity = "1";
+  leftPageTag.style.opacity = "1";  
   setTimeout(function(){ leftPageTag.style.overflow = "scroll";}, 400);
-  // navTag.classList.toggle('left-open')
-  // navTag.style.zIndex = '8'
 })
+
+leftPageTag.style.cursor = `url('./assets/close.png'), auto`
 
 leftPageTag.addEventListener('click', function () {
   land.classList.remove('open');
@@ -161,12 +161,14 @@ land.addEventListener('click', function () {
   groupTag.classList.remove('open');
 })
 
-container.addEventListener('click', function () {
+leftArea.addEventListener('click', function () {
   navTag.classList.remove('open');
   container.classList.remove('open');
   rightPageTag.classList.remove('open');
   land.classList.remove('open');
   groupTag.classList.remove('open');
+
+  leftArea.classList.remove('tab-is-shown')
 })
 
 
@@ -233,6 +235,8 @@ closingRight.addEventListener('click', function() {
   rightPageTag.classList.remove('open');
   land.classList.remove('open');
   groupTag.classList.remove('open');
+
+  leftArea.classList.remove('tab-is-shown')
 })
 
 
