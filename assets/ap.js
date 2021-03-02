@@ -10,7 +10,7 @@ var imgTop = [];
 var materials;
 var checkHover = false;
 var beforeScroll = 0;
-const navTag = document.querySelector('nav')
+// const navTag = document.querySelector('nav')
 
 $( document ).ready(function() {
 
@@ -131,11 +131,15 @@ function textCheck() {
 
 
 const rightPageTag = document.querySelector('div.right-page')
-const artistTag = document.querySelector('span.artists')
+const artistTag = document.querySelector('span.artistsButton')
+const closingRight = document.querySelector('div.closing-right');
+const fadingTag = document.querySelector('.fading');
+const navTag = document.querySelector('nav');
+
 
 artistTag.addEventListener('click', function () {
-  // navTag.classList.toggle('open')
-  rightPageTag.classList.toggle('open')
+  fadingTag.classList.add('open');
+  rightPageTag.classList.add('open')
   navTag.style.zIndex = '8'
 })
 
@@ -143,10 +147,17 @@ const leftArea = document.querySelector('#closeList')
 
 leftArea.addEventListener('click', ()=>{
   if (rightPageTag.classList.contains('open')) {
+  fadingTag.classList.remove('open');
   rightPageTag.classList.remove('open')
-  // navTag.classList.remove('open')
   }
 })
+
+closingRight.addEventListener('click', function() {
+  fadingTag.classList.remove('open');
+  rightPageTag.classList.remove('open');
+  leftArea.classList.remove('tab-is-shown')
+})
+
 
 const ListTag = document.querySelector('ul')
 const thumbnailTag = document.querySelector('div.thumbnail')
