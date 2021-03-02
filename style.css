@@ -264,7 +264,7 @@ div.presenting-artists {
 }
 
 div.closing-left {
-  /* display: none; */
+  display: none;
   font-size: 1.5em;
   position: fixed;
   padding-top: 6px;
