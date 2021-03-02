@@ -402,6 +402,8 @@ window.addEventListener('resize', function() {
   containerHeight = `${images.length * settings.scrollDuration}` * vh;
 })
 
+
+
 function updateGroup1(i) {
   for (i = 0; i < imgFiles.length; i++) {
     imgFiles[i].srcset = group1Img[i].srcset
@@ -414,7 +416,7 @@ function updateGroup1(i) {
 
   // go to group 1 title
   groupNameTag.innerHTML = "Group 1";
-  document.documentElement.scrollTop = imageHeight;
+  document.documentElement.scrollTop = imageHeight + vh/4;
   groupNameTag.animate(
   [{ filter: 'blur(3px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
   {duration: 500, easing: 'ease-in-out'});
@@ -439,7 +441,7 @@ function updateGroup2() {
 
   // go to group 2 title
   groupNameTag.innerHTML = "Group 2";
-  document.documentElement.scrollTop = imageHeight;
+  document.documentElement.scrollTop = imageHeight + vh/4;
   groupNameTag.animate(
   [{ filter: 'blur(3px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
   {duration: 500, easing: 'ease-in-out'});

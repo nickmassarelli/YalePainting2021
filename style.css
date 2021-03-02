@@ -381,6 +381,14 @@ body {
 }
 
 @media only screen and (max-width:799px) {
+  body {
+    font-size: 20px;
+  }
+
+  div.groups a {
+    padding: 5px;
+    cursor: pointer;
+  }
 
   p.title, p.groupName {
     font-size: 1.5em;

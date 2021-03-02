@@ -185,7 +185,7 @@ div.thumbnail {
 
 div.closing-right {
   font-size: 1.5em;
-  position: absolute;
+  position: fixed;
   padding-top: 6px;
   padding-right: 20px;
   right: 0;
@@ -240,6 +240,10 @@ div.closing-right {
 }
 
 @media only screen and (max-width:799px) {
+  body {
+    font-size: 20px;
+  }
+
   img {
     max-width: 90%;
   }
