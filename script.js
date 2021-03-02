@@ -131,6 +131,8 @@ infoTag.addEventListener('click', function () {
   leftPageTag.classList.toggle('open');
   leftPageTag.style.opacity = "1";
   setTimeout(function(){ leftPageTag.style.overflow = "scroll";}, 400);
+
+  closingLeft.style.display = 'block'
 })
 
 leftPageTag.style.cursor = `url('./assets/close.png'), auto`
@@ -141,7 +143,7 @@ leftPageTag.addEventListener('click', function () {
   leftPageTag.classList.remove('open')
   setTimeout(function(){ leftPageTag.style.opacity = "0";}, 500);
   leftPageTag.style.overflow = "hidden";
-  // navTag.classList.remove('left-open')
+  closingLeft.style.display = 'none'
 })
 
 closingLeft.addEventListener('click', function () {
@@ -150,7 +152,8 @@ closingLeft.addEventListener('click', function () {
   leftPageTag.classList.remove('open')
   setTimeout(function(){ leftPageTag.style.opacity = "0";}, 500);
   leftPageTag.style.overflow = "hidden";
-  // navTag.classList.remove('left-open')
+  closingLeft.style.display = 'none'
+
 })
 
 land.addEventListener('click', function () {

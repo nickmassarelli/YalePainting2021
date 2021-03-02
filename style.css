@@ -90,10 +90,15 @@ p.allcap {
 }
 
 .description {
-  font-size: 24px;
+  max-width: 80%;
+  width: fit-content;
+  text-align: right;
+  /* background-color: #414141; */
+  margin: 10px;
+  /* font-size: 24px; */
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 0;
+  right: 0;
 }
 
 .serie {
@@ -190,14 +195,14 @@ div.left-page {
   cursor: pointer;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   text-align: center;
   transition: transform .5s ease-in-out;
-  z-index: 9;
+  z-index: 8;
   background-color: white;
   position: fixed;
   top: 0;
@@ -265,11 +270,14 @@ div.presenting-artists {
 
 div.closing-left {
   display: none;
+
   font-size: 1.5em;
   position: fixed;
   padding-top: 6px;
   padding-left: 20px;
   left: 0;
+  top: 0;
+  z-index: 9;
 }
 
 ul li {
@@ -350,6 +358,21 @@ body {
     scrollbar-width: none;
   }
 
+  #closeList {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  
+  #closeList.tab-is-shown {
+    cursor: url('./assets/close.png'), auto;
+    z-index: 8;
+  }
+  
+
 @media only screen and (min-width: 1025px) and (max-width: 1365px) {
 
   div.thumbnail {
@@ -423,8 +446,8 @@ body {
 
 div.presenting-artists {
   display: grid;
-  grid-template-columns: auto auto;
-  text-align: left;
+  grid-template-columns: auto;
+  text-align: center;
   gap: 2em;
   line-height: 1.3em;
   padding-bottom: 10vh;
@@ -439,24 +462,17 @@ div.presenting-artists {
 }
 
   div.closing-left {
-    display: block;
+    position: fixed;
+    /* display: block; */
   }
 
   #progress-bar {
     display: none;
   }
+
+  .serie {
+    display: none;
+  }
 }
 
-#closeList {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
 
-#closeList.tab-is-shown {
-  cursor: url('./assets/close.png'), auto;
-  z-index: 8;
-}
