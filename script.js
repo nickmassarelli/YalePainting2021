@@ -456,5 +456,121 @@ function updateGroup2() {
 
 
 
+  const group2Img = [
+    {
+      srcset: './assets/Group2/1.jpg 1.5x',
+      description: `<a href="#0">Nathaniel Donnett</a>`
+    }, {
+      srcset: './assets/Group2/2.jpg 1.5x',
+      description: `<a href="#0">Nathaniel Donnett</a>`
+    }, {
+      srcset: './assets/Group2/3.jpg 1.5x',
+      description: `<a href="#0">Nathaniel Donnett</a>`
+    }, {
+      srcset: './assets/Group2/4.jpg 1.5x',
+      description: `<a href="#0">Brianna Rose Brooks</a>`
+    }, {
+      srcset: './assets/Group2/5.jpg 1.5x',
+      description: `<a href="#0">Danielle DeJesus</a>`
+    }, {
+      srcset: './assets/Group2/6.jpg 1.5x',
+      description: `<a href="#0">Danielle DeJesus</a>`
+    }, {
+      srcset: './assets/Group2/7.jpg 1.5x',
+      description: `<a href="#0">David Craig</a>`
+    }, {
+      srcset: './assets/Group2/8.jpg 1.5x',
+      description: `<a href="#0">David Craig</a>`
+    }, {
+      srcset: './assets/Group2/9.jpg 1.5x',
+      description: `<a href="#0">David Craig</a>`
+    }, {
+      srcset: './assets/Group2/10.jpg 1.5x',
+      description: `<a href="#0">Leyla Faye</a>`
+    }, {
+      srcset: './assets/Group2/11.jpg 1.5x',
+      description: `<a href="#0">Leyla Faye</a>, <a href="#0">Jonathan Rajewski</a>, <a href="#0">Vamba Bility</a>`
+    }, {
+      srcset: './assets/Group2/12.jpg 1.5x',
+      description: `<a href="#0">Jonathan Rajewski</a>`
+    }, {
+      srcset: './assets/Group2/13.jpg 1.5x',
+      description: `<a href="#0">Jonathan Rajewski</a>`
+    }, {
+      srcset: './assets/Group2/14.jpg 1.5x',
+      description: `<a href="#0">Jonathan Rajewski</a>, <a href="#0">Leyla Faye</a>, <a href="#0">Vamba Bility</a>`
+    }, {
+      srcset: './assets/Group2/15.jpg 1.5x',
+      description: `<a href="#0">Vamba Bility</a>`
+    }, {
+      srcset: './assets/Group2/16.jpg 1.5x',
+      description: `<a href="#0">Vamba Bility</a>`
+    }, {
+      srcset: './assets/Group2/17.jpg 1.5x',
+      description: `<a href="#0">Vamba Bility</a>`
+    }
+  ]
+  const group1Img = [
+    {
+      srcset: './assets/Group1/1.jpg 1.5x',
+      description: `<a href="./chibuike-uzoma.html">Chibuike Uzoma</a>`
+    }, {
+      srcset: './assets/Group1/2.jpg 1.5x',
+      description: `<a href="./kate-meissner.html">Kate Meissner</a>, <a href="./chibuike-uzoma.html">Chibuike Uzoma</a>`
+    }, {
+      srcset: './assets/Group1/3.jpg 1.5x',
+      description: `<a href="./kate-meissner.html">Kate Meissner</a>`
+    }, {
+      srcset: './assets/Group1/4.jpg 1.5x',
+      description: `<a href="./kate-meissner.html">Kate Meissner</a>`
+    }, {
+      srcset: './assets/Group1/5.jpg 1.5x',
+      description: `<a href="./gabriel-mills.html">Gabriel Mills</a>, <a href="./alina-perez.html">Alina Perez</a>`
+    }, {
+      srcset: './assets/Group1/6.jpg 1.5x',
+      description: `<a href="./gabriel-mills.html">Gabriel Mills</a>, <a href="./alina-perez.html">Alina Perez</a>`
+    }, {
+      srcset: './assets/Group1/7.jpg 1.5x',
+      description: `<a href="./alina-perez.html">Alina Perez</a>`
+    }, {
+      srcset: './assets/Group1/8.jpg 1.5x',
+      description: `<a href="./alina-perez.html">Alina Perez</a>, <a href="./gabriel-mills.html">Gabriel Mills</a>`
+    }, {
+      srcset: './assets/Group1/13.jpg 1.5x',
+      description: `<a href="./sara-rahmanian.html">Sara Rahmanian</a>`
+    }, {
+      srcset: './assets/Group1/10.jpg 1.5x',
+      description: `<a href="./sara-rahmanian.html">Sara Rahmanian</a>`
+    }, {
+      srcset: './assets/Group1/11.jpg 1.5x',
+      description: `<a href="./sara-rahmanian.html">Sara Rahmanian</a>`
+    }, {
+      srcset: './assets/Group1/12.jpg 1.5x',
+      description: `<a href="./sara-rahmanian.html">Sara Rahmanian</a>`
+    }, {
+      srcset: './assets/Group1/18.jpg 1.5x',
+      description: `<a href="./emma-safir.html">Emma Safir</a>, <a href="./mich-miller.html">Mich Miller</a>`
+    }, {
+      srcset: './assets/Group1/15.jpg 1.5x',
+      description: `<a href="./emma-safir.html">Emma Safir</a>`
+    }, {
+      srcset: './assets/Group1/16.jpg 1.5x',
+      description: `<a href="./tamen-pérez.html">Tamen Perez</a>, <a href="./emma-safir.html">Emma Safir</a>`
+    }, {
+      srcset: './assets/Group1/20.jpg 1.5x',
+      description: `<a href="./curtis-welteroth.html">Curtis Welteroth</a>`
+    }, {
+      srcset: './assets/Group1/21.jpg 1.5x',
+      description: `<a href="./curtis-welteroth.html">Curtis Welteroth</a>`
+    }
+  ]
+
+  // by default show Group 1
+  // group2Click.style.opacity = '.2'
+  // group1Click.style.opacity = '1'
+  for (i = 0; i < imgFiles.length; i++) {
+    imgFiles[i].srcset = group1Img[i].srcset
+    descriptions[i].innerHTML = group1Img[i].description
+  }
 
 }
