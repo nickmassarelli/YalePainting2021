@@ -418,7 +418,7 @@ function updateGroup1(i) {
 
   // go to group 1 title
   groupNameTag.innerHTML = "Group 1";
-  document.documentElement.scrollTop = imageHeight + vh/2;
+  document.documentElement.scrollTop = imageHeight + vh;
   groupNameTag.animate(
   [{ filter: 'blur(3px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
   {duration: 500, easing: 'ease-in-out'});
@@ -444,7 +444,7 @@ function updateGroup2() {
 
   // go to group 2 title
   groupNameTag.innerHTML = "Group 2";
-  document.documentElement.scrollTop = imageHeight + vh/2;
+  document.documentElement.scrollTop = imageHeight + vh;
   groupNameTag.animate(
   [{ filter: 'blur(3px)', opacity: '0'},{ filter: 'blur(0px)', opacity: '1'}],
   {duration: 500, easing: 'ease-in-out'});
