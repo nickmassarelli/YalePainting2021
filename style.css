@@ -96,6 +96,13 @@ p.allcap {
   right: 10px;
 }
 
+.serie {
+  font-size: 24px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
 nav {
   display: flex;
   width: 100%;
@@ -219,8 +226,11 @@ div.press-release {
     margin-right: auto;
     width: 50vw;
     padding-bottom: 10vh;
-    /* z-index: 10; */
-    /* background-color: white; */
+    max-width: 750px;
+}
+
+p.indent {
+  text-indent: 2em;
 }
 
 div.presenting-artists {
